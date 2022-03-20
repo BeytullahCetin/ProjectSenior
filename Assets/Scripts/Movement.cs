@@ -17,7 +17,8 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(movement * Time.deltaTime * (isRunning == false ? movementSpeed : movementSpeed * runSpeedMultiplier));
+        transform.position +=
+        movement * Time.deltaTime * (isRunning && movement.z > 0 ? movementSpeed * runSpeedMultiplier : movementSpeed);
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
