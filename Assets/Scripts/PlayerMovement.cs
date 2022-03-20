@@ -17,13 +17,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position +=
-        movement * Time.deltaTime * (isRunning && movement.z > 0 ? movementSpeed * runSpeedMultiplier : movementSpeed);
+        transform.localPosition +=
+        movement * Time.deltaTime * (isRunning && movement.z > 0 ? runSpeedMultiplier : 1);
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
-        movementInput = context.ReadValue<Vector2>();
+        movementInput = context.ReadValue<Vector2>() * movementSpeed;
         Debug.Log("OnMoveInput: " + context.phase + ": " + movementInput);
         movement.x = movementInput.x;
         movement.z = movementInput.y;
