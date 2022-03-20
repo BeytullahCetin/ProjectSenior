@@ -170,10 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ed1260c9fe9f847951c001c60cdfdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookYmin: 90
-  lookYmax: 270
+  xClamp: 90
   camTransform: {fileID: 963194228}
-  lookSpeed: 1
+  lookSpeed: 5
 --- !u!114 &116315222
 MonoBehaviour:
   m_ObjectHideFlags: 0
