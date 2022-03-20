@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xClamp: 90
-  camTransform: {fileID: 963194228}
+  playerCameraTransform: {fileID: 963194228}
   lookSpeed: 5
 --- !u!114 &116315222
 MonoBehaviour:
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  runSpeedMultiplier: 2
+  runSpeedMultiplier: 3
 --- !u!1 &157680487
 GameObject:
   m_ObjectHideFlags: 0
