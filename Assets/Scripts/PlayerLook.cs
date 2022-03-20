@@ -12,7 +12,7 @@ public class PlayerLook : MonoBehaviour
     float xRotation;
     Vector3 targetRotation;
 
-    [SerializeField] Transform camTransform;
+    [SerializeField] Transform playerCameraTransform;
     [Range(1, 10)]
     [SerializeField] float lookSpeed = 1f;
 
@@ -26,7 +26,7 @@ public class PlayerLook : MonoBehaviour
 
         targetRotation = transform.eulerAngles;
         targetRotation.x = xRotation;
-        camTransform.eulerAngles = targetRotation;
+        playerCameraTransform.eulerAngles = targetRotation;
 
     }
 
