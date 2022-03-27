@@ -12,11 +12,13 @@ public class ThirdPersonAnimation : MonoBehaviour
     private void OnEnable()
     {
         PlayerMovement.OnMovement += AnimateMovement;
+        PlayerMovement.OnCrouch += AnimateCrouch;
     }
 
     private void OnDisable()
     {
         PlayerMovement.OnMovement -= AnimateMovement;
+        PlayerMovement.OnCrouch += AnimateCrouch;
     }
 
     public void OnAnimationInput(InputAction.CallbackContext context)
@@ -33,6 +35,11 @@ public class ThirdPersonAnimation : MonoBehaviour
             animator.SetFloat("WalkDirection", -1f);
         else
             animator.SetFloat("WalkDirection", 1f);
+    }
+
+    void AnimateCrouch(bool isCrouching)
+    {
+        animator.SetBool("Crouch", isCrouching);
     }
 
 }
