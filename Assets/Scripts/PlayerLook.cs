@@ -13,7 +13,7 @@ public class PlayerLook : MonoBehaviour
     Vector3 targetRotation;
 
     [SerializeField] Transform playerCameraTransform;
-    [Range(1, 10)]
+    [Range(1, 100)]
     [SerializeField] float lookSpeed = 1f;
 
 
@@ -32,6 +32,7 @@ public class PlayerLook : MonoBehaviour
 
     public void OnLookInput(InputAction.CallbackContext context)
     {
+        if(!context.started)
         lookInput = context.ReadValue<Vector2>() * lookSpeed * Time.deltaTime;
     }
 }
