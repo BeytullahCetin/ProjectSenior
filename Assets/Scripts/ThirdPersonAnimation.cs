@@ -18,7 +18,7 @@ public class ThirdPersonAnimation : MonoBehaviour
     private void OnDisable()
     {
         PlayerMovement.OnMovement -= AnimateMovement;
-        PlayerMovement.OnCrouch += AnimateCrouch;
+        PlayerMovement.OnCrouch -= AnimateCrouch;
     }
 
     public void OnAnimationInput(InputAction.CallbackContext context)
