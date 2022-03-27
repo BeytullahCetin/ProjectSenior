@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xClamp: 90
   playerCameraTransform: {fileID: 963194228}
-  lookSpeed: 5
+  lookSpeed: 50
 --- !u!114 &116315222
 MonoBehaviour:
   m_ObjectHideFlags: 0
