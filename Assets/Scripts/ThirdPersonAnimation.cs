@@ -9,9 +9,14 @@ public class ThirdPersonAnimation : MonoBehaviour
     Vector2 movementInput;
     Vector3 movement;
 
-    private void Update()
+    private void OnEnable()
     {
-        Animate(movement);
+        PlayerMovement.OnMovement += AnimateMovement;
+    }
+
+    private void OnDisable()
+    {
+        PlayerMovement.OnMovement -= AnimateMovement;
     }
 
     public void OnAnimationInput(InputAction.CallbackContext context)
@@ -20,11 +25,11 @@ public class ThirdPersonAnimation : MonoBehaviour
         movement = new Vector3(movementInput.x, 0, movementInput.y);
     }
 
-    void Animate(Vector3 movement)
+    void AnimateMovement(Vector2 movement)
     {
         //Play Animation
         animator.SetBool("Walk", movement.magnitude > 0 ? true : false);
-        if (movement.z < 0)
+        if (movement.y < 0)
             animator.SetFloat("WalkDirection", -1f);
         else
             animator.SetFloat("WalkDirection", 1f);

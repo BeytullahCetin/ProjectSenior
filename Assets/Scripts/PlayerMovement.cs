@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static event Action<Vector2> OnMovement = delegate {};
+
     Vector2 movementInput;
     Vector3 movement;
     bool isRunning = false;
@@ -26,13 +29,14 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("OnMoveInput: " + context.phase + ": " + movementInput);
         movement.x = movementInput.x;
         movement.z = movementInput.y;
+
+        OnMovement(movementInput);
     }
 
     public void OnRunInput(InputAction.CallbackContext context)
     {   
         if(context.performed){
             isRunning = !isRunning;
-            Debug.Log(isRunning);
         }
     }
 }
