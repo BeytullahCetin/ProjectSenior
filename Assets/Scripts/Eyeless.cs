@@ -12,12 +12,12 @@ public class Eyeless : MonoBehaviour
 
     private void OnEnable()
     {
-        HearableObject.OnSound += HearSounds;
+        HearableObject.OnHearableObjectMakeNoise += HearSounds;
     }
 
     private void OnDisable()
     {
-        HearableObject.OnSound -= HearSounds;
+        HearableObject.OnHearableObjectMakeNoise -= HearSounds;
 
     }
 
