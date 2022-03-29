@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DetectableObject : MonoBehaviour
 {
-    public static event Action<Transform> OnDetected = delegate { };
+    public static event Action<Transform, Transform> OnDetected = delegate { };
 
     [SerializeField] float detectionThreshold = 10f;
     [SerializeField] float detectionMultiplier = 1f;
@@ -26,7 +26,7 @@ public class DetectableObject : MonoBehaviour
         Earless.OnEnemyDetectStarted -= CheckDetection;
     }
 
-    IEnumerator StartDetecting(Transform obj)
+    IEnumerator StartDetecting(Transform detector)
     {
         while (isDetectionStarted)
         {
@@ -38,11 +38,12 @@ public class DetectableObject : MonoBehaviour
                 currentDetection -= detectionMultiplier;
             
             isInSight = false;
-            Debug.Log("Detection Meter: " + currentDetection + "/" + detectionThreshold);
 
             if (currentDetection >= detectionThreshold)
             {
+                Debug.Log("ondetected");
                 isDetected = true;
+                OnDetected(transform, detector);
             }
             else if(currentDetection <= 0)
             {
@@ -53,9 +54,9 @@ public class DetectableObject : MonoBehaviour
         }
     }
 
-    void CheckDetection(Transform obj)
+    void CheckDetection(Transform detector, Transform spotted)
     {
-        if (obj != transform)
+        if (spotted != transform)
             return;
         
         isInSight = true;
@@ -63,7 +64,7 @@ public class DetectableObject : MonoBehaviour
         if (!isDetectionStarted)
         {
             isDetectionStarted = true;
-            StartCoroutine(StartDetecting(obj));
+            StartCoroutine(StartDetecting(detector));
         }
     }
 

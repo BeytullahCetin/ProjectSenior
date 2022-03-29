@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Earless : MonoBehaviour
 {
-    public static event Action<Transform> OnEnemyDetectStarted = delegate { };
+    public static event Action<Transform, Transform> OnEnemyDetectStarted = delegate { };
 
     [SerializeField] float detectDistance = 10f;
     [SerializeField] float detectionDifficulty = 1f;
@@ -13,6 +13,34 @@ public class Earless : MonoBehaviour
     Transform detector;
     Transform hitTransform;
     RaycastHit hit;
+
+    Vector3 targetDistanceVector;
+    [SerializeField] float stopDistance = 1f;
+
+    void OnEnable()
+    {
+        DetectableObject.OnDetected += FollowDetectedObject;
+    }
+
+    void OnDisable()
+    {
+        DetectableObject.OnDetected -= FollowDetectedObject;
+    }
+
+    void FollowDetectedObject(Transform spotted, Transform detector)
+    {   
+        if (detector != transform)
+            return;
+        
+        Debug.Log("FollowDetectedObject");
+
+        targetDistanceVector = spotted.position - transform.position;
+        Debug.Log(targetDistanceVector);
+        if (stopDistance < targetDistanceVector.magnitude)
+        {
+            transform.position += targetDistanceVector.normalized;
+        }
+    }
 
     private void Start()
     {
@@ -41,7 +69,7 @@ public class Earless : MonoBehaviour
             hitTransform = hit.transform;
             if (hitTransform.gameObject.GetComponent<DetectableObject>() != null)
             {
-                OnEnemyDetectStarted(hitTransform);
+                OnEnemyDetectStarted(transform, hitTransform);
             }
         }
     }
