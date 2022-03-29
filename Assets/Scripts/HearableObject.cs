@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class HearableObject : MonoBehaviour
 {
-    public static event Action<Transform> OnSound = delegate { };
+    public static event Action<Transform> OnHearableObjectMakeNoise = delegate { };
 
     private void OnCollisionEnter(Collision other)
     {
-        OnSound(transform);
+        OnHearableObjectMakeNoise(transform);
     }
 }
