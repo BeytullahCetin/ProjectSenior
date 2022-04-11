@@ -1,5 +1,6 @@
 # Backlog
 ## To-do
+- Level Design
 - Asset Optimization
 - Animations
 - Lighting
@@ -8,6 +9,7 @@
 - Music
 - Basic Story
 ## Done
+- Primitive environment (11.04.2022)
 - Enemy detection mechanic (Enemy can detect the player) (31.03.2022)
 - Event System (28.03.2022)
 - FPS Player Controller (28.03.2022)
