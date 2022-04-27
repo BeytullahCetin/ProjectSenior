@@ -7,8 +7,8 @@
 - UI
 - Sound Effects
 - Music
-- Basic Story
 ## Done
+- Basic Story (27.04.2022) 
 - Primitive environment (11.04.2022)
 - Enemy detection mechanic (Enemy can detect the player) (31.03.2022)
 - Event System (28.03.2022)
