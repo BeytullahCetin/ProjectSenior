@@ -16,6 +16,7 @@ public class Detectable : MonoBehaviour
     [SerializeField] float maxDetection = 10f;
     [SerializeField] float detectionIncreaseRate = 1f;
     [SerializeField] float detectionDecreseRate = 1f;
+    [SerializeField] bool isDetectable = true;
     [SerializeField] bool isContinouslyDetectable = false;
     bool isDetected = false;
     bool isDetectionStarted = false;
@@ -28,6 +29,9 @@ public class Detectable : MonoBehaviour
 
     public void DetectionHit()
     {
+        if(!isDetectable)
+            return;
+
         if (currentDetection < maxDetection)
             currentDetection += detectionIncreaseRate;
 
