@@ -2,15 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class Seeker : Enemy
+public class Watcher : Enemy
 {
     public event Action<Detectable> OnDetected = delegate { };
 
 
     [SerializeField] float detectDistance = 10f;
     [SerializeField] float detectionDifficulty = 5f;
-
+    [SerializeField] NavMeshAgent navMeshAgent;
 
     Transform detector;
     Transform hitTransform;
