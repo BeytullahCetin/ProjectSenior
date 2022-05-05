@@ -6,21 +6,19 @@ using UnityEngine.InputSystem;
 
 public class Detectable : MonoBehaviour
 {
+    //public enum DetectionType { Discrete, Continuous };
+
     public static event Action<Transform> OnDetected = delegate { };
     public static event Action<Transform> OnDetectionEnds = delegate { };
-    
 
-    float currentDetection = 0f;
+
+    [SerializeField]float currentDetection = 0f;
     [SerializeField] float maxDetection = 10f;
     [SerializeField] float detectionIncreaseRate = 1f;
+    [SerializeField] float detectionDecreseRate = 1f;
+    [SerializeField] bool isContinouslyDetectable = false;
     bool isDetected = false;
     bool isDetectionStarted = false;
-    bool detectionEventThrower = false;
-
-    private void Start()
-    {
-
-    }
 
     private void Update()
     {
@@ -33,18 +31,34 @@ public class Detectable : MonoBehaviour
         if (currentDetection < maxDetection)
             currentDetection += detectionIncreaseRate;
 
-        isDetected = currentDetection >= maxDetection;
-
         if (!isDetectionStarted)
         {
             isDetectionStarted = true;
             StartCoroutine(DetectionCountDown());
         }
 
-        if (isDetected && !detectionEventThrower)
+        if (isDetected)
         {
-            detectionEventThrower = true;
+            switch (isContinouslyDetectable)
+            {
+                case true:
+                    StartCoroutine(DetectContinously());
+                    break;
+                case false:
+                    OnDetected(this.transform);
+                    break;
+            }
+        }
+    }
+
+    IEnumerator DetectContinously()
+    {
+        int i = 0;
+        while (isDetected)
+        {
             OnDetected(this.transform);
+            Debug.Log("Detect Continously" + i++);
+            yield return new WaitForSeconds(1);
         }
     }
 
@@ -52,14 +66,13 @@ public class Detectable : MonoBehaviour
     {
         while (currentDetection > 0)
         {
-            currentDetection--;
+            isDetected = currentDetection >= maxDetection;
+            currentDetection-= detectionDecreseRate;
             yield return new WaitForSeconds(1);
         }
 
         isDetected = false;
         isDetectionStarted = false;
-        detectionEventThrower = false;
         OnDetectionEnds(this.transform);
-
     }
 }
