@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static Detectable;
 
 public class Watcher : Enemy
 {
@@ -21,14 +22,18 @@ public class Watcher : Enemy
     private void Start()
     {
         CreateDetector();
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        //navMeshAgent.updatePosition = false;
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         Detectable.OnDetected += Detect;
         Detectable.OnDetectionEnds += EndDetect;
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         Detectable.OnDetected -= Detect;
         Detectable.OnDetectionEnds -= EndDetect;
     }
@@ -38,12 +43,13 @@ public class Watcher : Enemy
         LookForDetectable();
     }
 
-     private void Detect(Transform obj)
+    private void Detect(Transform obj)
     {
         //Start follow enemy.
         Debug.Log("Seeker.Detect");
+        navMeshAgent.SetDestination(obj.position);
     }
-    
+
     private void EndDetect(Transform obj)
     {
         //End follow enemy.

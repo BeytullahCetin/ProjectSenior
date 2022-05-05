@@ -32,8 +32,6 @@ public class PlayerMovement : MonoBehaviour
     {
         movementInput = context.ReadValue<Vector2>();
 
-        Debug.Log("OnMoveInput: " + context.phase + ": " + movementInput);
-
         movement.x = movementInput.x;
         movement.z = movementInput.y;
         movement *= movementSpeed;
