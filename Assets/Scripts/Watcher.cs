@@ -19,6 +19,11 @@ public class Watcher : Enemy
     RaycastHit hit;
     Detectable currentDetected;
 
+    private void Reset()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+    }
+
     private void Start()
     {
         CreateDetector();
