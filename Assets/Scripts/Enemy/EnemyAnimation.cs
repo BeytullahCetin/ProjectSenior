@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-
-public class WatcherAnimation : MonoBehaviour
+[RequireComponent(typeof(NavMeshAgent),typeof(Animator))]
+public class EnemyAnimation : MonoBehaviour
 {
     [SerializeField] float speed;
 

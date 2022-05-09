@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : MonoBehaviour
 {
     [SerializeField] NavMeshAgent navMeshAgent;
@@ -17,6 +18,12 @@ public class Enemy : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         //navMeshAgent.updatePosition = false;
+    }
+
+    public void GoToPosition(Vector3 destination)
+    {
+        navMeshAgent.SetDestination(destination);
+        Debug.Log(name + ": GoToPosition");
     }
 
     public void Detect(Detectable obj)
