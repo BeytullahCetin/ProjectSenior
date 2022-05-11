@@ -5,12 +5,16 @@ using UnityEngine.InputSystem;
 public class Throwable : InventoryItem
 {
     [SerializeField] float radius = 10f;
+    bool activated = false;
     List<Enemy> enemiesInRadius = new List<Enemy>();
 
-    private void Update()
+    private void OnCollisionEnter(Collision other)
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-            ActivateFeature();
+        if (activated)
+            return;
+
+        ActivateFeature();
+        activated = true;
     }
 
     void ActivateFeature()
@@ -45,8 +49,10 @@ public class Throwable : InventoryItem
     {
         Throwable obj = Instantiate(this, t.position, Quaternion.identity);
         Rigidbody objRigidbody = obj.GetComponent<Rigidbody>();
-        float randomNumber = Random.Range(0,1);
+        float randomNumber = Random.Range(0, 1);
         objRigidbody.AddTorque(new Vector3(randomNumber, randomNumber, randomNumber));
         objRigidbody.AddForce(t.forward * throwForce);
     }
+
+
 }
