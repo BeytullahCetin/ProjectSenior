@@ -8,10 +8,6 @@ public class Detectable : MonoBehaviour
 {
     //public enum DetectionType { Discrete, Continuous };
 
-    public static event Action<Transform> OnDetected = delegate { };
-    public static event Action<Transform> OnDetectionEnds = delegate { };
-
-
     [SerializeField]float currentDetection = 0f;
     [SerializeField] float maxDetection = 10f;
     [SerializeField] float detectionIncreaseRate = 1f;
@@ -26,7 +22,7 @@ public class Detectable : MonoBehaviour
             currentDetection = 0;
     }
 
-    public void DetectionHit()
+    public void DetectionHit(Enemy enemy)
     {
         if (currentDetection < maxDetection)
             currentDetection += detectionIncreaseRate;
@@ -34,7 +30,7 @@ public class Detectable : MonoBehaviour
         if (!isDetectionStarted)
         {
             isDetectionStarted = true;
-            StartCoroutine(DetectionCountDown());
+            StartCoroutine(DetectionCountDown(enemy));
         }
 
         if (isDetected)
@@ -42,27 +38,27 @@ public class Detectable : MonoBehaviour
             switch (isContinouslyDetectable)
             {
                 case true:
-                    StartCoroutine(DetectContinously());
+                    StartCoroutine(DetectContinously(enemy));
                     break;
                 case false:
-                    OnDetected(this.transform);
+                    enemy.Detect(this);
                     break;
             }
         }
     }
 
-    IEnumerator DetectContinously()
+    IEnumerator DetectContinously(Enemy detectorEnemy)
     {
         int i = 0;
         while (isDetected)
         {
-            OnDetected(this.transform);
+            detectorEnemy.Detect(this);
             Debug.Log("Detect Continously" + i++);
             yield return new WaitForSeconds(1);
         }
     }
 
-    IEnumerator DetectionCountDown()
+    IEnumerator DetectionCountDown(Enemy detectorEnemy)
     {
         while (currentDetection > 0)
         {
@@ -73,6 +69,6 @@ public class Detectable : MonoBehaviour
 
         isDetected = false;
         isDetectionStarted = false;
-        OnDetectionEnds(this.transform);
+        detectorEnemy.EndDetect(this);
     }
 }
