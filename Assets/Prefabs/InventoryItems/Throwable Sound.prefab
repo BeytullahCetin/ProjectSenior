@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1998921674507465776, guid: 8855631e4f8c9a148819a98c276e765d, type: 3}
+      propertyPath: selfDestructTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6897434121734711453, guid: 8855631e4f8c9a148819a98c276e765d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
