@@ -8,12 +8,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4249403042174395406, guid: 8a712b05de132624480bb3e0f3af912b, type: 3}
+      propertyPath: throwableType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249403042174395406, guid: 8a712b05de132624480bb3e0f3af912b, type: 3}
       propertyPath: selfDestructTime
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9150728313379266980, guid: 8a712b05de132624480bb3e0f3af912b, type: 3}
       propertyPath: m_Name
-      value: Throwable Light
+      value: Light Throwable
       objectReference: {fileID: 0}
     - target: {fileID: 9150728313379266987, guid: 8a712b05de132624480bb3e0f3af912b, type: 3}
       propertyPath: m_RootOrder

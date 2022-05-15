@@ -2,11 +2,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public enum ThrowableType { Default, Light, Sound };
+
 public class Throwable : InventoryItem
 {
+
     [SerializeField] float radius = 10f;
     bool activated = false;
     List<Enemy> enemiesInRadius = new List<Enemy>();
+    [SerializeField] ThrowableType throwableType;
+    public ThrowableType GetThrowableType { get { return throwableType; } }
 
     private void OnCollisionEnter(Collision other)
     {
@@ -25,6 +30,7 @@ public class Throwable : InventoryItem
         {
             e.GoToPosition(transform.position);
             Debug.Log(e.name + ": Activate Feature");
+            break;
         }
 
         enemiesInRadius.Clear();
@@ -35,7 +41,8 @@ public class Throwable : InventoryItem
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
         foreach (var hitCollider in hitColliders)
         {
-            Enemy e = hitCollider.GetComponent<Enemy>();
+
+            Enemy e = throwableType == ThrowableType.Light ? hitCollider.GetComponent<Watcher>() : hitCollider.GetComponent<Listener>();
             if (e != null)
             {
                 enemiesInRadius.Add(e);
@@ -53,6 +60,4 @@ public class Throwable : InventoryItem
         objRigidbody.AddTorque(new Vector3(randomNumber, randomNumber, randomNumber));
         objRigidbody.AddForce(t.forward * throwForce);
     }
-
-
 }

@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1998921674507465776, guid: 8855631e4f8c9a148819a98c276e765d, type: 3}
+      propertyPath: throwableType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998921674507465776, guid: 8855631e4f8c9a148819a98c276e765d, type: 3}
       propertyPath: selfDestructTime
       value: 5
       objectReference: {fileID: 0}
@@ -61,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6897434123242631578, guid: 8855631e4f8c9a148819a98c276e765d, type: 3}
       propertyPath: m_Name
-      value: Throwable Sound
+      value: Sound Throwable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8855631e4f8c9a148819a98c276e765d, type: 3}

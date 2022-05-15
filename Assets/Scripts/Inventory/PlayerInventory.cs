@@ -2,16 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static Throwable;
 
 public class PlayerInventory : MonoBehaviour
 {
     [SerializeField] Transform itemInstantiatePoint;
     [SerializeField] InventoryItem[] items;
+    [SerializeField] Dictionary<InventoryItem, float> itemsAmmos;
     InventoryItem selectedItem;
     int selectedItemIndex = 0;
 
     void Start()
     {
+        itemsAmmos = new Dictionary<InventoryItem, float>();
+
+        for (int i = 0; i < items.Length; i++)
+        {
+            InventoryItem item = items[i];
+            itemsAmmos.Add(item, 0);
+        }
+
         if (items.Length > 0)
             selectedItem = items[selectedItemIndex];
     }
@@ -20,17 +30,22 @@ public class PlayerInventory : MonoBehaviour
     {
         if (context.performed)
         {
+
             switch (selectedItem.GetType().ToString())
             {
                 case "Throwable":
-                    selectedItem.UseInventoryItem(itemInstantiatePoint, GetComponent<PlayerController>().ThrowForce);
+                    if (itemsAmmos[selectedItem] > 0)
+                    {
+                        selectedItem.UseInventoryItem(itemInstantiatePoint, GetComponent<PlayerController>().ThrowForce);
+                        itemsAmmos[selectedItem]--;
+                        Debug.Log(itemsAmmos[selectedItem]);
+                    }
                     break;
+
                 case "EmptyHand":
                     selectedItem.UseInventoryItem();
                     break;
             }
-
-
         }
     }
 
@@ -52,6 +67,20 @@ public class PlayerInventory : MonoBehaviour
             }
             Debug.Log(selectedItemIndex);
             selectedItem = items[selectedItemIndex];
+        }
+    }
+
+    public void AddAmmo(string type)
+    {
+        foreach (InventoryItem i in items)
+        {
+            Throwable throwable = i.GetComponent<Throwable>();
+            if (throwable.GetThrowableType.ToString() == type)
+            {
+                itemsAmmos[throwable]++;
+                Debug.Log(itemsAmmos[throwable]);
+                break;
+            }
         }
     }
 }
