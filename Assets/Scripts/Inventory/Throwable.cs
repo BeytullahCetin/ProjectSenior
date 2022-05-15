@@ -45,7 +45,7 @@ public class Throwable : InventoryItem
         }
     }
 
-    public void Throw(Transform t, float throwForce)
+    public override void UseInventoryItem(Transform t, float throwForce)
     {
         Throwable obj = Instantiate(this, t.position, Quaternion.identity);
         Rigidbody objRigidbody = obj.GetComponent<Rigidbody>();
