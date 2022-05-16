@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LureController : CollectibleController
+public class LureController : InteractableController
 {
     [SerializeField] Enemy[] EnemiesToLure;
 

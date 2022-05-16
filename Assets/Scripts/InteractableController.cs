@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CollectibleController : MonoBehaviour
+public class InteractableController : MonoBehaviour
 {
     Canvas UI;
     TextMeshProUGUI UIText;
+
 
     Transform playerTransform;
     protected bool canInteractable;

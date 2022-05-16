@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
             Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * 10, Color.red, 1f);
             if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, 10))
             {
-                CollectibleController current = hit.collider.gameObject.GetComponent<CollectibleController>();
+                InteractableController current = hit.collider.gameObject.GetComponent<InteractableController>();
                 if (current != null)
                 {
                     current.Interaction();
