@@ -65,7 +65,6 @@ public class PlayerInventory : MonoBehaviour
                 //Select previous inventory item
                 selectedItemIndex = selectedItemIndex > 0 ? selectedItemIndex - 1 : items.Length - 1;
             }
-            Debug.Log(selectedItemIndex);
             selectedItem = items[selectedItemIndex];
         }
     }
