@@ -5,23 +5,34 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] Camera playerCamera;
+
     [SerializeField] float throwForce = 1f;
     public float ThrowForce { get { return throwForce; } }
 
+    private void Start()
+    {
+        playerCamera = GetComponentInChildren<Camera>();
+    }
+
     public void Interact(InputAction.CallbackContext context)
     {
-        if (!context.performed)
-            return;
-
-        RaycastHit hit;
-        Debug.DrawRay(transform.position, transform.forward * 10, Color.red);
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 10))
+        if (context.performed)
         {
-            CollectibleController current = hit.collider.gameObject.GetComponent<CollectibleController>();
-            if (current != null)
+
+            Debug.Log("Raycast");
+
+            RaycastHit hit;
+            Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * 10, Color.red, 1f);
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, 10))
             {
-                current.Interaction();
+                CollectibleController current = hit.collider.gameObject.GetComponent<CollectibleController>();
+                if (current != null)
+                {
+                    current.Interaction();
+                }
             }
+
         }
     }
 }
