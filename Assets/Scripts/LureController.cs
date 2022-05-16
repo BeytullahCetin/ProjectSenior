@@ -13,4 +13,10 @@ public class LureController : CollectibleController
             enemy.GoToPosition(transform.position);
         }
     }
+
+    public override void Interaction()
+    {
+        if (canInteractable)
+            Debug.Log("Interaction LureController");
+    }
 }
