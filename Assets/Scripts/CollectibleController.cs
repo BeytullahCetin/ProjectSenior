@@ -5,12 +5,11 @@ using TMPro;
 
 public class CollectibleController : MonoBehaviour
 {
-    [SerializeField] Canvas UI;
-    [SerializeField] TextMeshProUGUI UIText;
-
+    Canvas UI;
+    TextMeshProUGUI UIText;
 
     Transform playerTransform;
-    bool canInteractable;
+    protected bool canInteractable;
     bool canRotate;
 
     void Start()
@@ -18,10 +17,15 @@ public class CollectibleController : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
+    private void Reset() {
+        UI = GetComponentInChildren<Canvas>();
+        UIText = GetComponentInChildren<TextMeshProUGUI>();
+    }
+
     public virtual void Interaction()
     {
         if (canInteractable)
-            Debug.Log("Interaction");
+            Debug.Log("Interaction CollectibleController");
     }
 
     void Update()
@@ -32,9 +36,12 @@ public class CollectibleController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        canRotate = true;
-        canInteractable = true;
-        ShowUI();
+        if (other.CompareTag("Player"))
+        {
+            canRotate = true;
+            canInteractable = true;
+            ShowUI();
+        }
     }
 
     void ShowUI()
@@ -44,9 +51,12 @@ public class CollectibleController : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        canRotate = false;
-        canInteractable = false;
-        HideUI();
+        if (other.CompareTag("Player"))
+        {
+            canRotate = false;
+            canInteractable = false;
+            HideUI();
+        }
     }
 
     void HideUI()
