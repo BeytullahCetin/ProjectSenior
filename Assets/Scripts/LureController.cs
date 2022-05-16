@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LureController : MonoBehaviour
+public class LureController : CollectibleController
 {
-    Enemy[] EnemiesToLure;
+    [SerializeField] Enemy[] EnemiesToLure;
 
-    void OnTriggerEnter(Collider other)
+    public void ActivateLure()
     {
-        if (other.CompareTag("Player"))
+        foreach (Enemy enemy in EnemiesToLure)
         {
-            foreach (Enemy enemy in EnemiesToLure)
-            {
-            }
+            enemy.GoToPosition(transform.position);
         }
     }
 }
