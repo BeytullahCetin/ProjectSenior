@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Watcher
+  m_Controller: {fileID: 9100000, guid: 9326d73e99e9198458bccedfd8055185, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -203655887218126122, guid: b96a8f6c5b1f30c44b852cab9efd2b28, type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: b96a8f6c5b1f30c44b852cab9efd2b28, type: 3}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: 7dfe7b4fb38d9ee4fa44eece2983a4e2, type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: 7dfe7b4fb38d9ee4fa44eece2983a4e2, type: 3}
