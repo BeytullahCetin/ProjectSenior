@@ -29,7 +29,7 @@ public class Watcher : Enemy
     {
         detector = new GameObject("Detector").transform;
         detector.parent = transform;
-        detector.localPosition = Vector3.zero;
+        detector.localPosition = Vector3.zero + new Vector3(0, 1, 0);
     }
 
     void LookForDetectable()

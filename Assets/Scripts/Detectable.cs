@@ -8,7 +8,7 @@ public class Detectable : MonoBehaviour
 {
     //public enum DetectionType { Discrete, Continuous };
 
-    [SerializeField]float currentDetection = 0f;
+    [SerializeField] float currentDetection = 0f;
     [SerializeField] float maxDetection = 10f;
     [SerializeField] float detectionIncreaseRate = 1f;
     [SerializeField] float detectionDecreseRate = 1f;
@@ -49,11 +49,9 @@ public class Detectable : MonoBehaviour
 
     IEnumerator DetectContinously(Enemy detectorEnemy)
     {
-        int i = 0;
         while (isDetected)
         {
             detectorEnemy.Detect(this);
-            Debug.Log("Detect Continously" + i++);
             yield return new WaitForSeconds(1);
         }
     }
@@ -63,7 +61,7 @@ public class Detectable : MonoBehaviour
         while (currentDetection > 0)
         {
             isDetected = currentDetection >= maxDetection;
-            currentDetection-= detectionDecreseRate;
+            currentDetection -= detectionDecreseRate;
             yield return new WaitForSeconds(1);
         }
 
