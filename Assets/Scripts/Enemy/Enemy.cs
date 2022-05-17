@@ -8,15 +8,24 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] NavMeshAgent navMeshAgent;
+    [SerializeField] float gameOverDistance = 2f;
+
+    public static Action OnGameOver = delegate { };
+
+    [SerializeField] Transform playerTransform;
+    float distanceBetweenPlayer;
+
 
     private void Reset()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         //navMeshAgent.updatePosition = false;
     }
 
@@ -29,13 +38,22 @@ public class Enemy : MonoBehaviour
     public void Detect(Detectable obj)
     {
         //Start follow enemy.
-        Debug.Log("Seeker.Detect");
         navMeshAgent.SetDestination(obj.transform.position);
+        CheckGameOver();
     }
 
     public void EndDetect(Detectable obj)
     {
         //End follow enemy.
         Debug.Log("Seeker.EndDetect");
+    }
+
+    public void CheckGameOver()
+    {
+        distanceBetweenPlayer = (transform.position - playerTransform.position).magnitude;
+        if (distanceBetweenPlayer < gameOverDistance)
+        {
+            OnGameOver();
+        }
     }
 }
