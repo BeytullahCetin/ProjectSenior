@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SlidingText : MonoBehaviour
 {
+    public event Action OnTextEnd = delegate { };
+
     [SerializeField] RectTransform text;
     [Range(1, 10)]
     [SerializeField] int slideSpeed = 1;
@@ -39,5 +42,6 @@ public class SlidingText : MonoBehaviour
         isEnded = false;
         text.anchoredPosition = Vector2.zero;
         gameObject.SetActive(false);
+        OnTextEnd();
     }
 }
