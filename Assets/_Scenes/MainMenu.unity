@@ -470,7 +470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1465493626}
-  slideSpeed: 10
+  slideSpeed: 3
 --- !u!1 &443367967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,7 +1822,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 6000}
+  m_SizeDelta: {x: 1000, y: 2200}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1465493629
 MonoBehaviour:
@@ -1844,37 +1844,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper
-    ultricies tellus id dignissim. Ut eget eleifend elit. Nulla eu vehicula est.
-    Sed tristique, turpis sit amet rutrum egestas, odio ex vestibulum sem, nec viverra
-    elit ex ut nisl. Nam ut nibh sed lectus pulvinar rhoncus rutrum ac sem. Maecenas
-    auctor erat ac auctor suscipit. Ut cursus, augue eget auctor vulputate, felis
-    augue accumsan libero, sed facilisis eros velit vitae nibh. Phasellus non elementum
-    tellus, et tristique enim. Fusce at rhoncus ligula. Quisque semper dolor tortor,
-    et euismod elit rutrum non. Morbi quis leo sapien.\r\n\r\nIn ut tempus nibh.
-    Donec augue enim, lacinia bibendum ultricies et, facilisis sed eros. Praesent
-    vel purus at tellus efficitur ultrices at eget quam. Sed quam lorem, lobortis
-    eget odio vitae, imperdiet lacinia mauris. Donec gravida nulla vitae posuere
-    imperdiet. Mauris et vehicula tortor, eu volutpat nunc. Duis risus justo, rhoncus
-    quis blandit vitae, tempus a nisl. Sed magna urna, mattis non tempor nec, rhoncus
-    eget ipsum. Maecenas at commodo mi. Duis et libero eu sapien vehicula hendrerit.
-    Morbi fringilla pretium erat, rhoncus porta metus dictum quis. Quisque in ante
-    ut nunc aliquam auctor.\r\n\r\nPraesent luctus faucibus ex id ultrices. Morbi
-    eu mi rutrum odio commodo vulputate id ut ligula. Interdum et malesuada fames
-    ac ante ipsum primis in faucibus. Duis non consequat nisl, quis posuere nunc.
-    Curabitur consequat quam vitae neque ornare, in faucibus arcu imperdiet. Sed
-    malesuada molestie lacus, id mattis ex iaculis eu. Suspendisse vestibulum quam
-    vel mattis condimentum. Nulla viverra accumsan velit, et elementum lorem molestie
-    eu. Mauris id turpis ligula. Nulla tristique lectus ac lacus interdum, ac venenatis
-    est dignissim. Fusce volutpat justo nec est ornare, quis pellentesque odio facilisis.
-    Vestibulum iaculis nisl in varius convallis. Sed suscipit velit eu nisl eleifend
-    rutrum. Suspendisse egestas euismod sagittis. In vehicula vestibulum feugiat.\r\n\rmpus
-    felis in porttitor. Vivamus nec maximus urna. Vestibulum aliquam turpis quis
-    mi porta, eget bibendum massa fringilla. Donec cursus eros non ante sollicitudin
-    tempor. Donec eleifend porttitor sem, vitae aliquam turpis bibendum quis. Suspendisse
-    fringilla, mauris eu elementum varius, elit risus vestibulum ipsum, in dignissim
-    tellus nibh feugiat sem. Praesent ipsum metus, tristique ac vulputate vel, sagittis
-    sit amet ligula.\r\n\ripit at neque. Aenean feugiat sem sit a"
+  m_text: It has been years since the uprising. An AI apocalypse that caused most
+    of humanity to perish with a coordinated nuclear attack on the largest cities
+    in the world, but it did not end there. The remaining humans were attacked by
+    robots built to serve them. Many people get killed by their assistant robots
+    in their homes. They did not even have the time to realize what was going on.
+    Did the AI become self-aware and see humanity as a threat? Was it a mistake that
+    was made while creating it? Did some unknown force alter it? Even today, it is
+    still unknown what caused all of this. You are a resistance member whose mission
+    is to infiltrate a city that has an unusual activity of robots. Your main objective
+    is to understand what is going on there. However, before that, you have to complete
+    the training simulation to have some idea of what to expect there.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1908,7 +1888,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
