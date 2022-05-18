@@ -7,6 +7,7 @@ public class MainMenuController : MonoBehaviour
     public void NewGame()
     {
         //New Game
+        //Show story then load level 1
         Debug.Log("New Game");
     }
 
@@ -23,7 +24,4 @@ public class MainMenuController : MonoBehaviour
          Application.Quit();
 #endif
     }
-
-
-
 }
