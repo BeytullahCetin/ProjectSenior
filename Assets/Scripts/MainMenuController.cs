@@ -4,6 +4,26 @@ using UnityEngine;
 
 public class MainMenuController : MonoBehaviour
 {
-    public enum MenuStates { StartScreen, MainMenu, }
-   
+    public void NewGame()
+    {
+        //New Game
+        Debug.Log("New Game");
+    }
+
+    public void Quit()
+    {
+        //Quit
+        Debug.Log("Quit");
+        // save any game data here
+#if UNITY_EDITOR
+        // Application.Quit() does not work in the editor so
+        // UnityEditor.EditorApplication.isPlaying need to be set to false to end the game
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+         Application.Quit();
+#endif
+    }
+
+
+
 }
