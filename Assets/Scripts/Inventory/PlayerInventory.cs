@@ -12,6 +12,11 @@ public class PlayerInventory : MonoBehaviour
     InventoryItem selectedItem;
     int selectedItemIndex = 0;
 
+    static bool isObjectiveTaken = false;
+    public static bool IsObjectiveTaken { get { return isObjectiveTaken; } }
+
+
+
     void Start()
     {
         itemsAmmos = new Dictionary<InventoryItem, float>();
@@ -81,5 +86,10 @@ public class PlayerInventory : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public static void TakeObjective()
+    {
+        isObjectiveTaken = true;
     }
 }
