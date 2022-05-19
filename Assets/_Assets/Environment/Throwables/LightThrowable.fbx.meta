@@ -3,7 +3,22 @@ guid: 9b831ee3f36ad5b47b411e48bfcfab9c
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightThrowableInnerShell
+    second: {fileID: 2100000, guid: b6c30a80bcef3ad4aa42f6505084519b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightThrowableLight
+    second: {fileID: 2100000, guid: 877dd698e1491004fbbc31cbf4b8238e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightThrowableOuterShell
+    second: {fileID: 2100000, guid: 5dd984dbb32456f44be86c7264e5cf8a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
