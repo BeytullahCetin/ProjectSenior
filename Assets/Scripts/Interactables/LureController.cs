@@ -13,12 +13,4 @@ public class LureController : InteractableController
             enemy.GoToPosition(transform.position);
         }
     }
-
-    public override void Interaction()
-    {
-        if (canInteractable && !isUsed)
-        {
-            Debug.Log("Interaction LureController");
-        }
-    }
 }
