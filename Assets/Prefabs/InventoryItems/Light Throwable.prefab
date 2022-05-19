@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selfDestructTime: 15
   radius: 15
-  throwableType: 0
+  throwableType: 1
 --- !u!54 &237615794
 Rigidbody:
   m_ObjectHideFlags: 0
