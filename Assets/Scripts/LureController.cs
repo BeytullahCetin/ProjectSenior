@@ -16,7 +16,9 @@ public class LureController : InteractableController
 
     public override void Interaction()
     {
-        if (canInteractable)
+        if (canInteractable && !isUsed)
+        {
             Debug.Log("Interaction LureController");
+        }
     }
 }
