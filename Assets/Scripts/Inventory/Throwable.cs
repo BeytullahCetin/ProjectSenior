@@ -18,8 +18,11 @@ public class Throwable : InventoryItem
         if (activated)
             return;
 
-        ActivateFeature();
-        activated = true;
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            ActivateFeature();
+            activated = true;
+        }
     }
 
     void ActivateFeature()
