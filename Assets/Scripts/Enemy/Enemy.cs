@@ -7,26 +7,25 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] NavMeshAgent navMeshAgent;
-    [SerializeField] float gameOverDistance = 2f;
-
     public static Action OnGameOver = delegate { };
 
-    [SerializeField] Transform playerTransform;
+    [SerializeField] NavMeshAgent navMeshAgent;
+    [SerializeField] float gameOverDistance = 1f;
+
+
+    [SerializeField] protected Transform playerTransform;
     float distanceBetweenPlayer;
 
+    private void Awake()
+    {
+        Reset();
+
+    }
 
     private void Reset()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
-    private void Start()
-    {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        //navMeshAgent.updatePosition = false;
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     public void GoToPosition(Vector3 destination)

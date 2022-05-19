@@ -14,7 +14,7 @@ public class GameOverController : MonoBehaviour
 
     void Start()
     {
-        gameOverCanvas = GetComponent<Canvas>();
+        Reset();
         gameOverCanvas.enabled = false;
     }
 

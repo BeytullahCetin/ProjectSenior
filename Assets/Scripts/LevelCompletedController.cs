@@ -9,10 +9,14 @@ public class LevelCompletedController : MonoBehaviour
 
     Canvas canvas;
 
+    private void Reset() {
+        canvas = GetComponent<Canvas>();
+    }
+
     private void Awake()
     {
+        Reset();
         showSeconds = new WaitForSeconds(showDuration);
-        canvas = GetComponent<Canvas>();
     }
 
     public IEnumerator ShowUI()

@@ -59,7 +59,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5792140069231222684}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_Radius: 0.5
   m_Speed: 0.65
   m_Acceleration: 8
@@ -82,7 +82,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5792140069231222684}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 9f129d0255a07964eb527be914963a78, type: 3}
+  m_Avatar: {fileID: 9000000, guid: a6919a5250f1a924ca04a221d3ff7470, type: 3}
   m_Controller: {fileID: 22100000, guid: 917aa766be9217448ab1359569b5e7e9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -107,7 +107,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 5792140069231222694}
   gameOverDistance: 1
-  playerTransform: {fileID: 0}
   detectDistance: 10
   detectionDifficulty: 5
 --- !u!114 &1830413153
