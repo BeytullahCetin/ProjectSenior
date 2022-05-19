@@ -6,7 +6,7 @@ using TMPro;
 public class InteractableController : MonoBehaviour
 {
     Canvas UI;
-    TextMeshProUGUI UIText;
+    GameObject UITextContainer;
 
 
     Transform playerTransform;
@@ -15,12 +15,14 @@ public class InteractableController : MonoBehaviour
 
     void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        Reset();
     }
 
-    private void Reset() {
+    private void Reset()
+    {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         UI = GetComponentInChildren<Canvas>();
-        UIText = GetComponentInChildren<TextMeshProUGUI>();
+        UITextContainer = GetComponentInChildren<TextMeshProUGUI>().transform.parent.gameObject;
     }
 
     public virtual void Interaction()
@@ -32,7 +34,7 @@ public class InteractableController : MonoBehaviour
     void Update()
     {
         if (canRotate)
-            UIText.transform.LookAt(2 * transform.position - playerTransform.position);
+            UITextContainer.transform.LookAt(2 * transform.position - playerTransform.position);
     }
 
     void OnTriggerEnter(Collider other)
