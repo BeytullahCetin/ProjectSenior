@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class LightLureController : LureController
 {
+    [SerializeField] Light[] lightsToDisable;
+
     public override void Interaction()
     {
         if (canInteractable && !isUsed)
         {
-            Debug.Log("Interaction LureController");
+            foreach (Light light in lightsToDisable)
+            {
+                light.enabled = false;
+            }
         }
     }
-   
+
 }
