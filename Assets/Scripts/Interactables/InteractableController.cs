@@ -11,6 +11,7 @@ public class InteractableController : MonoBehaviour
 
     Transform playerTransform;
     protected bool canInteractable;
+    protected bool isUsed = false;
     bool canRotate;
 
     void Start()
@@ -49,7 +50,8 @@ public class InteractableController : MonoBehaviour
 
     void ShowUI()
     {
-        UI.enabled = true;
+        if (!isUsed)
+            UI.enabled = true;
     }
 
     void OnTriggerExit(Collider other)
