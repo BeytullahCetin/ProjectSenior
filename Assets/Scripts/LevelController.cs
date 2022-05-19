@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelController : MonoBehaviour
 {
 
     [SerializeField] ObjectiveController objective;
+    [SerializeField] LevelCompletedController levelCompletedController;
+    [SerializeField] TextMeshProUGUI levelWinText;
 
     bool isObjectiveTaken = false;
 
@@ -34,8 +37,8 @@ public class LevelController : MonoBehaviour
                 return;
             }
 
-            //Show Win Screen
-            Debug.Log("Objective taken:" + objective.name);
+            levelWinText.SetText("Level " + objective.name + " Completed");
+            StartCoroutine(levelCompletedController.ShowUI());
         }
     }
 }
