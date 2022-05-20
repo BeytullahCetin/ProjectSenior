@@ -518,6 +518,50 @@ PrefabInstance:
       propertyPath: levelCompletedController
       value: 
       objectReference: {fileID: 1652375747}
+    - target: {fileID: 4718754656265085880, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718754656265085880, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338003396348958867, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+      propertyPath: EnemiesToLure.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338003396348958867, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+      propertyPath: EnemiesToLure.Array.data[0]
+      value: 
+      objectReference: {fileID: 725376459}
+    - target: {fileID: 8474925283091466756, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+      propertyPath: EnemiesToLure.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8474925283091466756, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+      propertyPath: lightsToDisable.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8474925283091466756, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+      propertyPath: EnemiesToLure.Array.data[0]
+      value: 
+      objectReference: {fileID: 725376459}
+    - target: {fileID: 8474925283091466756, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+      propertyPath: lightsToDisable.Array.data[0]
+      value: 
+      objectReference: {fileID: 1190818707}
+    - target: {fileID: 8474925283091466756, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+      propertyPath: lightsToDisable.Array.data[1]
+      value: 
+      objectReference: {fileID: 1647684126}
+    - target: {fileID: 8474925283091466756, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+      propertyPath: lightsToDisable.Array.data[2]
+      value: 
+      objectReference: {fileID: 1441017276}
+    - target: {fileID: 8474925283091466756, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+      propertyPath: lightsToDisable.Array.data[3]
+      value: 
+      objectReference: {fileID: 803546502}
     - target: {fileID: 9122430787153677753, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -629,6 +673,22 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012771917564, guid: b4bb0068f29ebb54487c4154fba6f55f, type: 3}
   m_PrefabInstance: {fileID: 717487605}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &725376459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4718754656265085881, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+  m_PrefabInstance: {fileID: 556573145}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a98c74c223f144a0be03c13e14db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!108 &803546502 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 108000010466445364, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+  m_PrefabInstance: {fileID: 556573145}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &806590985
 GameObject:
@@ -803,7 +863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1418967672327620328, guid: 3daba614700d82247aba29f118800e9b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.45
+      value: -15.28
       objectReference: {fileID: 0}
     - target: {fileID: 1418967672327620328, guid: 3daba614700d82247aba29f118800e9b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -811,7 +871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1418967672327620328, guid: 3daba614700d82247aba29f118800e9b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.19
+      value: 32.2
       objectReference: {fileID: 0}
     - target: {fileID: 1418967672327620328, guid: 3daba614700d82247aba29f118800e9b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1095,6 +1155,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd77344f615069c4ab72cdee6375270f, type: 3}
+--- !u!108 &1190818707 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 108000009997368956, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+  m_PrefabInstance: {fileID: 556573145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1288496824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1433,6 +1498,16 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012771917564, guid: b4bb0068f29ebb54487c4154fba6f55f, type: 3}
   m_PrefabInstance: {fileID: 1391232778}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &1441017276 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 108000009787047955, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+  m_PrefabInstance: {fileID: 556573145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &1647684126 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 108000009089684994, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
+  m_PrefabInstance: {fileID: 556573145}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1652375747 stripped
 MonoBehaviour:
