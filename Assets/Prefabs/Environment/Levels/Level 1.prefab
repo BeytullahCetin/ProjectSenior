@@ -591,6 +591,8 @@ MonoBehaviour:
   objective: {fileID: 8338003396348958867}
   levelCompletedController: {fileID: 0}
   levelWinText: {fileID: 0}
+  levelWinEarningsText: {fileID: 0}
+  levelWinEarnings: 
 --- !u!65 &1676162639
 BoxCollider:
   m_ObjectHideFlags: 0

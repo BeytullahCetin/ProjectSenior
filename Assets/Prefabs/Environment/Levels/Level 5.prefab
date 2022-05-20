@@ -927,6 +927,7 @@ GameObject:
   - component: {fileID: 4149151754734314579}
   - component: {fileID: 1189016220}
   - component: {fileID: 1189016221}
+  - component: {fileID: 1189016222}
   m_Layer: 0
   m_Name: Level 5
   m_TagString: Untagged
@@ -1020,6 +1021,21 @@ MonoBehaviour:
   objective: {fileID: 2905791487470006156}
   levelCompletedController: {fileID: 0}
   levelWinText: {fileID: 0}
+  levelWinEarningsText: {fileID: 0}
+  levelWinEarnings: 
+--- !u!65 &1189016222
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7063110509423629750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.50582874, y: 1.8951411, z: 1.4400021}
+  m_Center: {x: -37.998535, y: 1.1491334, z: 11.752352}
 --- !u!1 &7377349879203926890
 GameObject:
   m_ObjectHideFlags: 0
