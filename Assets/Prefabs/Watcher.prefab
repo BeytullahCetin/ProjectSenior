@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 5792140069231222694}
   gameOverDistance: 1
+  playerTransform: {fileID: 0}
   detectDistance: 10
   detectionDifficulty: 5
 --- !u!114 &1830413153
@@ -209,6 +210,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Watcher
       objectReference: {fileID: 0}
+    - target: {fileID: 5654885296999839313, guid: a6919a5250f1a924ca04a221d3ff7470, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8df29dcfede22c14d92d57239407ccf8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6919a5250f1a924ca04a221d3ff7470, type: 3}
 --- !u!4 &859641366451747350 stripped
