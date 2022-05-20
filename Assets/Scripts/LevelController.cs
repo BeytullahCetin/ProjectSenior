@@ -11,10 +11,20 @@ public class LevelController : MonoBehaviour
     [SerializeField] LevelCompletedController levelCompletedController;
     [SerializeField] TextMeshProUGUI levelWinText;
     [SerializeField] TextMeshProUGUI levelWinEarningsText;
+
     [TextArea]
     [SerializeField] string levelWinEarnings;
+    [SerializeField] ThrowableType[] LevelEarnings;
+
+    PlayerInventory playerInventory;
 
     bool isObjectiveTaken = false;
+    bool isLevelCompleted = false;
+
+    private void Start()
+    {
+        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+    }
 
     private void OnEnable()
     {
@@ -30,6 +40,14 @@ public class LevelController : MonoBehaviour
         isObjectiveTaken = true;
     }
 
+    void AddLevelEarnings(ThrowableType[] objectsToAdd)
+    {
+        foreach (ThrowableType throwableType in objectsToAdd)
+        {
+            playerInventory.AddAmmo(throwableType.ToString());
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -40,9 +58,14 @@ public class LevelController : MonoBehaviour
                 return;
             }
 
+            if (isLevelCompleted)
+                return;
+
             levelWinText.SetText(gameObject.name + " Completed");
             levelWinEarningsText.SetText(levelWinEarnings);
             StartCoroutine(levelCompletedController.ShowUI());
+            AddLevelEarnings(LevelEarnings);
+            isLevelCompleted = true;
         }
     }
 }
