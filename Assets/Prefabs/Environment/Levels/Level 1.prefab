@@ -593,6 +593,7 @@ MonoBehaviour:
   levelWinText: {fileID: 0}
   levelWinEarningsText: {fileID: 0}
   levelWinEarnings: +Sound Bomb
+  LevelEarnings: 02000000
 --- !u!65 &1676162639
 BoxCollider:
   m_ObjectHideFlags: 0

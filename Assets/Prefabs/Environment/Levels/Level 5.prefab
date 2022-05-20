@@ -1023,6 +1023,7 @@ MonoBehaviour:
   levelWinText: {fileID: 0}
   levelWinEarningsText: {fileID: 0}
   levelWinEarnings: 
+  LevelEarnings: 
 --- !u!65 &1189016222
 BoxCollider:
   m_ObjectHideFlags: 0

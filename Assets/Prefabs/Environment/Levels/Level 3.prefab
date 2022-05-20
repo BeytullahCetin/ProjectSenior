@@ -200,6 +200,7 @@ MonoBehaviour:
   levelWinText: {fileID: 0}
   levelWinEarningsText: {fileID: 0}
   levelWinEarnings: +Light Bomb
+  LevelEarnings: 01000000
 --- !u!65 &1623358168
 BoxCollider:
   m_ObjectHideFlags: 0

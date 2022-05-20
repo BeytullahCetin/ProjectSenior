@@ -139,6 +139,7 @@ MonoBehaviour:
   levelWinEarnings: '+Light Bomb
 
     +Sound Bomb'
+  LevelEarnings: 0100000002000000
 --- !u!65 &1213912477
 BoxCollider:
   m_ObjectHideFlags: 0
