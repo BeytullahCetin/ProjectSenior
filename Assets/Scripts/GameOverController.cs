@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOverController : MonoBehaviour
 {
+    [SerializeField] int delayAfterReload = 5;
     Canvas gameOverCanvas;
 
     void Reset()
@@ -33,10 +34,12 @@ public class GameOverController : MonoBehaviour
     {
         gameOverCanvas.enabled = true;
         GameObject.FindGameObjectWithTag("Player").SetActive(false);
+        StartCoroutine(ReloadScene());
     }
 
-    public void ReloadScene()
+    IEnumerator ReloadScene()
     {
+        yield return new WaitForSeconds(delayAfterReload);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
