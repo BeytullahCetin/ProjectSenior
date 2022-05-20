@@ -10,6 +10,8 @@ public class LevelController : MonoBehaviour
     [SerializeField] ObjectiveController objective;
     [SerializeField] LevelCompletedController levelCompletedController;
     [SerializeField] TextMeshProUGUI levelWinText;
+    [SerializeField] TextMeshProUGUI levelWinEarningsText;
+    [SerializeField] string levelWinEarnings;
 
     bool isObjectiveTaken = false;
 
