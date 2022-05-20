@@ -199,7 +199,7 @@ MonoBehaviour:
   levelCompletedController: {fileID: 0}
   levelWinText: {fileID: 0}
   levelWinEarningsText: {fileID: 0}
-  levelWinEarnings: 
+  levelWinEarnings: +Light Bomb
 --- !u!65 &1623358168
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -264,12 +264,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1124870991}
     - target: {fileID: 925165779, guid: b151b42a33e05e74bb6c1db146c0758e, type: 3}
-      propertyPath: levelWinEarnings
-      value: '+Light Bomb
-
-        +Sound Bomb'
-      objectReference: {fileID: 0}
-    - target: {fileID: 925165779, guid: b151b42a33e05e74bb6c1db146c0758e, type: 3}
       propertyPath: levelWinEarningsText
       value: 
       objectReference: {fileID: 1848691692}
@@ -524,10 +518,6 @@ PrefabInstance:
       propertyPath: levelWinText
       value: 
       objectReference: {fileID: 1124870991}
-    - target: {fileID: 1676162638, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
-      propertyPath: levelWinEarnings
-      value: +Sound Bomb
-      objectReference: {fileID: 0}
     - target: {fileID: 1676162638, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
       propertyPath: levelWinEarningsText
       value: 
@@ -876,10 +866,6 @@ PrefabInstance:
       propertyPath: levelWinText
       value: 
       objectReference: {fileID: 1124870991}
-    - target: {fileID: 1213912476, guid: 55276af480e7ae14ea0a1437c8c3b4c6, type: 3}
-      propertyPath: levelWinEarnings
-      value: +Light Bomb\n+Sound Bomb
-      objectReference: {fileID: 0}
     - target: {fileID: 1213912476, guid: 55276af480e7ae14ea0a1437c8c3b4c6, type: 3}
       propertyPath: levelWinEarningsText
       value: 
@@ -1715,10 +1701,6 @@ PrefabInstance:
       propertyPath: levelWinText
       value: 
       objectReference: {fileID: 1124870991}
-    - target: {fileID: 1623358167, guid: 3d54a7e4feb7c1c41a546de8af08679e, type: 3}
-      propertyPath: levelWinEarnings
-      value: +Light Bomb
-      objectReference: {fileID: 0}
     - target: {fileID: 1623358167, guid: 3d54a7e4feb7c1c41a546de8af08679e, type: 3}
       propertyPath: levelWinEarningsText
       value: 

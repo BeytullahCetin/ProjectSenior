@@ -592,7 +592,7 @@ MonoBehaviour:
   levelCompletedController: {fileID: 0}
   levelWinText: {fileID: 0}
   levelWinEarningsText: {fileID: 0}
-  levelWinEarnings: 
+  levelWinEarnings: +Sound Bomb
 --- !u!65 &1676162639
 BoxCollider:
   m_ObjectHideFlags: 0
