@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectiveController : InteractableController
+public class ObjectiveController : LureController
 {
     public event Action OnObjectiveTaken = delegate { };
 
@@ -11,6 +11,7 @@ public class ObjectiveController : InteractableController
     {
         if (canInteractable)
         {
+            ActivateLure();
             OnObjectiveTaken();
             Debug.Log("Objective Interaction");
         }
