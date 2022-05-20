@@ -10,6 +10,8 @@ public class LightLureController : LureController
     {
         if (canInteractable && !isUsed)
         {
+            ActivateLure();
+
             foreach (Light light in lightsToDisable)
             {
                 light.enabled = false;
