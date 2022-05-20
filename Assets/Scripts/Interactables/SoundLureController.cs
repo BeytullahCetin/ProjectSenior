@@ -12,8 +12,11 @@ public class SoundLureController : LureController
     {
         if (canInteractable && !isUsed)
         {
+            isUsed = true;
             audioLight.enabled = true;
             audioSource.Play();
+
+            ActivateLure();
             StartCoroutine(ChangeLightTransform());
         }
     }

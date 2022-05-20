@@ -440,6 +440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3441070858382367306}
   - component: {fileID: 1602966605523333100}
+  - component: {fileID: 8753166049339856742}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -524,6 +525,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &8753166049339856742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6414240771497425264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &1102628745389980818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -663,6 +684,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83e5c1f32291cc04b9c53ea79e9b320f, type: 3}
+--- !u!1 &3721290572751910091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 83e5c1f32291cc04b9c53ea79e9b320f, type: 3}
+  m_PrefabInstance: {fileID: 4568277156067412378}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8070394250174759695
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3721290572751910091}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0028164512, y: 0.0022492285, z: 0.0028164512}
+  m_Center: {x: -0.000000029802322, y: -0.0011246143, z: 0.0014082256}
 --- !u!4 &4102637027799035505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 83e5c1f32291cc04b9c53ea79e9b320f, type: 3}

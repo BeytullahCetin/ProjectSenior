@@ -106,8 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 5792140069231222694}
-  gameOverDistance: 1
-  playerTransform: {fileID: 0}
+  gameOverDistance: 1.5
   detectDistance: 10
   detectionDifficulty: 5
 --- !u!114 &1830413153
