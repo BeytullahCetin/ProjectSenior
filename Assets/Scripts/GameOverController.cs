@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverController : MonoBehaviour
 {
@@ -32,5 +33,10 @@ public class GameOverController : MonoBehaviour
     {
         gameOverCanvas.enabled = true;
         GameObject.FindGameObjectWithTag("Player").SetActive(false);
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField] string newGameScene;
     [SerializeField] SlidingText storyScreen;
+    [SerializeField] Button pressAnyKey;
 
     public void NewGame()
     {
@@ -15,6 +18,14 @@ public class MainMenuController : MonoBehaviour
         //Show story then load level 1
         Debug.Log("New Game");
         StartStory();
+    }
+
+    void SkipStartingScene()
+    {
+        if(Keyboard.current.anyKey.wasPressedThisFrame)
+        {
+            pressAnyKey.onClick.Invoke();
+        }
     }
 
     void LoadGameAfterStory()

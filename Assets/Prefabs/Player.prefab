@@ -2894,7 +2894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  runSpeedMultiplier: 3
+  runSpeedMultiplier: 2
 --- !u!114 &1418967672327620335
 MonoBehaviour:
   m_ObjectHideFlags: 0
