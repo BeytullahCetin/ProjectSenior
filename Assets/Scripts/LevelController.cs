@@ -11,6 +11,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] LevelCompletedController levelCompletedController;
     [SerializeField] TextMeshProUGUI levelWinText;
     [SerializeField] TextMeshProUGUI levelWinEarningsText;
+    [TextArea]
     [SerializeField] string levelWinEarnings;
 
     bool isObjectiveTaken = false;
@@ -40,6 +41,7 @@ public class LevelController : MonoBehaviour
             }
 
             levelWinText.SetText("Level " + objective.name + " Completed");
+            levelWinEarningsText.SetText(levelWinEarnings);
             StartCoroutine(levelCompletedController.ShowUI());
         }
     }
