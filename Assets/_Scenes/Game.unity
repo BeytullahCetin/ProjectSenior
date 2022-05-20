@@ -547,11 +547,11 @@ PrefabInstance:
       objectReference: {fileID: 1652375747}
     - target: {fileID: 4718754656265085880, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.08
+      value: -0.98
       objectReference: {fileID: 0}
     - target: {fileID: 4718754656265085880, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.63
+      value: -2.1
       objectReference: {fileID: 0}
     - target: {fileID: 8338003396348958867, guid: 457288885bf225c4a9a6a19d7f122431, type: 3}
       propertyPath: EnemiesToLure.Array.size
