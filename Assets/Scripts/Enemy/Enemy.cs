@@ -13,19 +13,17 @@ public class Enemy : MonoBehaviour
     [SerializeField] float gameOverDistance = 1f;
 
 
-    [SerializeField] protected Transform playerTransform;
+    protected Transform playerTransform;
     float distanceBetweenPlayer;
 
     private void Awake()
     {
         Reset();
-
     }
 
     private void Reset()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     public void GoToPosition(Vector3 destination)

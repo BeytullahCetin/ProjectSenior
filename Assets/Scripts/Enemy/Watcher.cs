@@ -17,6 +17,7 @@ public class Watcher : Enemy
 
     private void Start()
     {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         CreateDetector();
     }
 
