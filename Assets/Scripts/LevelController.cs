@@ -40,7 +40,7 @@ public class LevelController : MonoBehaviour
                 return;
             }
 
-            levelWinText.SetText("Level " + objective.name + " Completed");
+            levelWinText.SetText(gameObject.name + " Completed");
             levelWinEarningsText.SetText(levelWinEarnings);
             StartCoroutine(levelCompletedController.ShowUI());
         }
