@@ -6,7 +6,7 @@ public enum ThrowableType { Default, Light, Sound };
 
 public class Throwable : InventoryItem
 {
-
+    Collider[] hitColliders;
     [SerializeField] float radius = 10f;
     bool activated = false;
     List<Enemy> enemiesInRadius = new List<Enemy>();
@@ -41,7 +41,7 @@ public class Throwable : InventoryItem
 
     void GetEnemiesInRadius()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
+        hitColliders = Physics.OverlapSphere(transform.position, radius);
         foreach (var hitCollider in hitColliders)
         {
 
