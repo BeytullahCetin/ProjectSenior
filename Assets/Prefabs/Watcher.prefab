@@ -109,6 +109,7 @@ MonoBehaviour:
   gameOverDistance: 1.5
   detectDistance: 10
   detectionDifficulty: 5
+  sightAngle: 190
 --- !u!114 &1830413153
 MonoBehaviour:
   m_ObjectHideFlags: 0
