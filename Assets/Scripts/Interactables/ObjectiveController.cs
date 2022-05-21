@@ -5,15 +5,16 @@ using UnityEngine;
 
 public class ObjectiveController : LureController
 {
-    public event Action OnObjectiveTaken = delegate { };
+    public event Action<ObjectiveController> OnObjectiveTaken = delegate { };
 
     public override void Interaction()
     {
         if (canInteractable)
         {
             ActivateLure();
-            OnObjectiveTaken();
+            OnObjectiveTaken(this);
             Debug.Log("Objective Interaction");
+            Destroy(gameObject);
         }
     }
 }
