@@ -2938,9 +2938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f4ad3473a4c9f49b0ef598b9a167f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDetection: 0
-  maxDetection: 10
-  detectionIncreaseRate: 5
+  detectionIncreaseRate: 1
   detectionDecreseRate: 1
   isContinouslyDetectable: 1
 --- !u!136 &1418967672327620322
