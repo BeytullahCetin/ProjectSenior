@@ -7,27 +7,33 @@ public class SoundLureController : LureController
     [SerializeField] AudioSource audioSource;
     [SerializeField] Light audioLight;
     [SerializeField] Transform audioLightTransform;
+    [SerializeField] int SoundLureDuration = 15;
+
+    float duration = 0;
 
     public override void Interaction()
     {
         if (canInteractable && !isUsed)
-        {
-            isUsed = true;
-            audioLight.enabled = true;
-            audioSource.Play();
+            StartCoroutine(StartAlarm());
 
-            ActivateLure();
-            StartCoroutine(ChangeLightTransform());
-        }
     }
 
-    IEnumerator ChangeLightTransform()
+    IEnumerator StartAlarm()
     {
-        while (true)
+        isUsed = true;
+        audioLight.enabled = true;
+        audioSource.Play();
+        ActivateLure();
+
+        while (duration < SoundLureDuration)
         {
             audioLightTransform.Rotate(Vector3.right);
+            duration += Time.deltaTime;
             yield return null;
         }
+
+        duration = 0;
+        audioSource.Stop();
     }
 
 }
