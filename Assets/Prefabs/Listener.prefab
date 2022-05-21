@@ -87,6 +87,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 780230151}
   gameOverDistance: 1.5
+  detectDistance: 4
+  detectionDifficulty: 10
+  sightAngle: 360
 --- !u!114 &780230149
 MonoBehaviour:
   m_ObjectHideFlags: 0

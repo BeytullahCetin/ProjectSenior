@@ -8,13 +8,24 @@ public class Detectable : MonoBehaviour
 {
     //public enum DetectionType { Discrete, Continuous };
 
-    [SerializeField] float currentDetection = 0f;
-    [SerializeField] float maxDetection = 10f;
+    float currentDetection = 0f;
+    float maxDetection = 10f;
+    [Range(1, 5)]
     [SerializeField] float detectionIncreaseRate = 1f;
+    [Range(1, 5)]
     [SerializeField] float detectionDecreseRate = 1f;
     [SerializeField] bool isContinouslyDetectable = false;
+
+    PlayerMovement playerMovement;
+
     bool isDetected = false;
     bool isDetectionStarted = false;
+
+
+    private void Start()
+    {
+        playerMovement = GetComponent<PlayerMovement>();
+    }
 
     private void Update()
     {
@@ -24,8 +35,20 @@ public class Detectable : MonoBehaviour
 
     public void DetectionHit(Enemy enemy)
     {
+        if (enemy.GetComponent<Listener>())
+        {
+            if (!playerMovement.IsMoving)
+                return;
+
+            if (playerMovement.IsMoving && !playerMovement.IsRunning)
+                return;
+        }
+
         if (currentDetection < maxDetection)
+        {
             currentDetection += detectionIncreaseRate;
+
+        }
 
         if (!isDetectionStarted)
         {
