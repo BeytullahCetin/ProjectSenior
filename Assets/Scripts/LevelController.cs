@@ -7,7 +7,9 @@ using TMPro;
 public class LevelController : MonoBehaviour
 {
 
-    [SerializeField] ObjectiveController objective;
+    [SerializeField] ObjectiveController[] objectives;
+    Dictionary<ObjectiveController, bool> isObjectiveTakenControl = new Dictionary<ObjectiveController, bool>();
+
     [SerializeField] LevelCompletedController levelCompletedController;
     [SerializeField] TextMeshProUGUI levelWinText;
     [SerializeField] TextMeshProUGUI levelWinEarningsText;
@@ -18,26 +20,41 @@ public class LevelController : MonoBehaviour
 
     PlayerInventory playerInventory;
 
-    bool isObjectiveTaken = false;
     bool isLevelCompleted = false;
 
     private void Start()
     {
         playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+        objectives = GetComponentsInChildren<ObjectiveController>();
+        for (int i = 0; i < objectives.Length; i++)
+        {
+            isObjectiveTakenControl.Add(objectives[i], false);
+        }
+
     }
 
     private void OnEnable()
     {
-        objective.OnObjectiveTaken += TakeObjective;
+        foreach (ObjectiveController objective in objectives)
+        {
+            objective.OnObjectiveTaken += TakeObjective;
+        }
     }
     private void OnDisable()
     {
-        objective.OnObjectiveTaken += TakeObjective;
+        foreach (ObjectiveController objective in objectives)
+        {
+            objective.OnObjectiveTaken -= TakeObjective;
+        }
     }
 
-    private void TakeObjective()
+    private void TakeObjective(ObjectiveController objective)
     {
-        isObjectiveTaken = true;
+        Debug.Log(isObjectiveTakenControl);
+        if (isObjectiveTakenControl.ContainsKey(objective))
+        {
+            isObjectiveTakenControl[objective] = true;
+        }
     }
 
     void AddLevelEarnings(ThrowableType[] objectsToAdd)
@@ -52,10 +69,10 @@ public class LevelController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (!isObjectiveTaken)
+            foreach (bool control in isObjectiveTakenControl.Values)
             {
-                Debug.Log("Objective not taken");
-                return;
+                if (control == false)
+                    return;
             }
 
             if (isLevelCompleted)
