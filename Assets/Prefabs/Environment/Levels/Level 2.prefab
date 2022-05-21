@@ -1044,14 +1044,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6093820434753951099, guid: 80d2fce905a126944bcf5574fce00508, type: 3}
-      propertyPath: audioLightTransform
-      value: 
-      objectReference: {fileID: 4175176180328162994}
-    - target: {fileID: 6093820434753951099, guid: 80d2fce905a126944bcf5574fce00508, type: 3}
-      propertyPath: EnemiesToLure.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093820434753951099, guid: 80d2fce905a126944bcf5574fce00508, type: 3}
       propertyPath: EnemiesToLure.Array.data[0]
       value: 
       objectReference: {fileID: 4709815991221225497}
@@ -1062,36 +1054,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 635992508405708852, guid: 80d2fce905a126944bcf5574fce00508, type: 3}
   m_PrefabInstance: {fileID: 3546266812696378827}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4175176180328162994 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 632732099533069177, guid: 80d2fce905a126944bcf5574fce00508, type: 3}
-  m_PrefabInstance: {fileID: 3546266812696378827}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7508955369904293051 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6414240771497425264, guid: 80d2fce905a126944bcf5574fce00508, type: 3}
-  m_PrefabInstance: {fileID: 3546266812696378827}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &282581889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7508955369904293051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 1
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &3657016998949904720
 PrefabInstance:
   m_ObjectHideFlags: 0
