@@ -50,8 +50,6 @@ public class Watcher : Enemy
                     toPositive = true;
             }
 
-            Debug.Log(detector.rotation.eulerAngles.y);
-
             RaycastHit hit;
             Debug.DrawRay(detector.position, detector.forward * detectDistance, Color.red);
             if (Physics.Raycast(detector.position, detector.forward, out hit, detectDistance))
