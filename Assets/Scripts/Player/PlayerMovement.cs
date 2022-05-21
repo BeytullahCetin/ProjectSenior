@@ -18,10 +18,11 @@ public class PlayerMovement : MonoBehaviour
     Vector3 movement;
 
     [Header("States")]
+    bool isMoving = false;
+    public bool IsMoving { get { return isMoving; } }
     bool isRunning = false;
+    public bool IsRunning { get { return isRunning; } }
     bool isCrouching = false;
-
-
 
     void Update()
     {
@@ -35,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
         movement.x = movementInput.x;
         movement.z = movementInput.y;
         movement *= movementSpeed;
+
+        isMoving = movement.z > 0;
 
         OnMovement(movementInput);
     }
@@ -50,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
                     break;
 
                 case false:
-                    if(!isCrouching)
+                    if (!isCrouching)
                         isRunning = true;
                     break;
             }
@@ -66,14 +69,14 @@ public class PlayerMovement : MonoBehaviour
                 case true:
                     isCrouching = false;
                     break;
-                
+
                 case false:
                     //Slide mechanic can be handled here.
                     isRunning = false;
                     isCrouching = true;
                     break;
             }
-            
+
             OnCrouch(isCrouching);
         }
     }
