@@ -19,12 +19,17 @@ public class LevelController : MonoBehaviour
     [SerializeField] ThrowableType[] LevelEarnings;
 
     PlayerInventory playerInventory;
+    DoorLightning doorLightning;
 
     bool isLevelCompleted = false;
+
+    public bool IsLevelCompleted { get { return isLevelCompleted; } }
 
     private void Start()
     {
         playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+        doorLightning = GetComponentInChildren<DoorLightning>();
+
         objectives = GetComponentsInChildren<ObjectiveController>();
         for (int i = 0; i < objectives.Length; i++)
         {
@@ -82,7 +87,10 @@ public class LevelController : MonoBehaviour
             levelWinEarningsText.SetText(levelWinEarnings);
             StartCoroutine(levelCompletedController.ShowUI());
             AddLevelEarnings(LevelEarnings);
+            doorLightning.ChangeMaterial(1);
             isLevelCompleted = true;
+            
+            GameCompletedController.Instance.CheckGameCompleted();
         }
     }
 }
