@@ -16,6 +16,8 @@ public class Detectable : MonoBehaviour
     [SerializeField] float detectionDecreseRate = 1f;
     [SerializeField] bool isContinouslyDetectable = false;
 
+    Enemy currentDetector;
+
     PlayerMovement playerMovement;
 
     bool isDetected = false;
@@ -33,20 +35,16 @@ public class Detectable : MonoBehaviour
             currentDetection = 0;
     }
 
-    public void DetectionHit(Enemy enemy)
+    void DetectionHit(Enemy enemy)
     {
-        if (enemy.GetComponent<Listener>())
-        {
-            if (!playerMovement.IsMoving)
-                return;
-
-            if (playerMovement.IsMoving && !playerMovement.IsRunning)
-                return;
-        }
-
         if (currentDetection < maxDetection)
         {
-            currentDetection += detectionIncreaseRate;
+            currentDetection += enemy.DetectionDifficulty;
+
+            if (null == enemy.GetComponent<Listener>())
+                Debug.Log("Watcher hit");
+            else
+                Debug.Log("Listener hit");
 
         }
 
@@ -68,6 +66,22 @@ public class Detectable : MonoBehaviour
                     break;
             }
         }
+    }
+
+    public void ShootDetectionHit(Watcher enemy)
+    {
+        DetectionHit(enemy);
+    }
+
+    public void ShootDetectionHit(Listener enemy)
+    {
+        if (!playerMovement.IsMoving)
+            return;
+
+        if (playerMovement.IsMoving && !playerMovement.IsRunning)
+            return;
+        
+        DetectionHit(enemy);
     }
 
     IEnumerator DetectContinously(Enemy detectorEnemy)

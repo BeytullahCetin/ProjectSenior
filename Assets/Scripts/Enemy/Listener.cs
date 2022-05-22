@@ -8,7 +8,6 @@ using static Detectable;
 public class Listener : Enemy
 {
     [SerializeField] float detectDistance = 10f;
-    [SerializeField] float detectionDifficulty = 5f;
     [SerializeField] float sightAngle = 180;
 
     Transform detector;
@@ -39,26 +38,26 @@ public class Listener : Enemy
         {
             if (toPositive)
             {
-                detector.Rotate(Vector3.up * detectionDifficulty);
+                detector.Rotate(Vector3.up * 6);
                 if (detector.rotation.eulerAngles.y > sightAngle && detector.rotation.eulerAngles.y < 180)
                     toPositive = false;
             }
             else
             {
-                detector.Rotate(Vector3.down * detectionDifficulty);
+                detector.Rotate(Vector3.down * 6);
                 if (detector.rotation.eulerAngles.y < 360 - sightAngle && detector.rotation.eulerAngles.y > 180)
                     toPositive = true;
             }
 
             RaycastHit hit;
-            Debug.DrawRay(detector.position, detector.forward * detectDistance, Color.red);
+            Debug.DrawRay(detector.position, detector.forward * detectDistance, Color.blue);
             if (Physics.Raycast(detector.position, detector.forward, out hit, detectDistance))
             {
                 hitTransform = hit.transform;
                 currentDetected = hitTransform.gameObject.GetComponent<Detectable>();
                 if (currentDetected != null)
                 {
-                    currentDetected.DetectionHit(this);
+                    currentDetected.ShootDetectionHit(this);
                 }
             }
 

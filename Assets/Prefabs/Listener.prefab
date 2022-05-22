@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 780230150}
   - component: {fileID: 780230149}
   - component: {fileID: 8717197574583207819}
+  - component: {fileID: 707820425}
   m_Layer: 0
   m_Name: Listener
   m_TagString: Untagged
@@ -87,8 +88,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 780230151}
   gameOverDistance: 1.5
-  detectDistance: 4
-  detectionDifficulty: 10
+  detectionDifficulty: 4
+  detectDistance: 25
   sightAngle: 360
 --- !u!114 &780230149
 MonoBehaviour:
@@ -123,6 +124,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &707820425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950935817335646879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a98c74c223f144a0be03c13e14db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 780230151}
+  gameOverDistance: 2
+  detectionDifficulty: 5
+  detectDistance: 2
+  sightAngle: 360
 --- !u!1 &6950935817765972817
 GameObject:
   m_ObjectHideFlags: 0

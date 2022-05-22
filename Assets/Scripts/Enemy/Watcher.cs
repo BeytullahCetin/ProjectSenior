@@ -8,7 +8,6 @@ using static Detectable;
 public class Watcher : Enemy
 {
     [SerializeField] float detectDistance = 10f;
-    [SerializeField] float detectionDifficulty = 5f;
     [SerializeField] float sightAngle = 180;
 
     Transform detector;
@@ -39,13 +38,13 @@ public class Watcher : Enemy
         {
             if (toPositive)
             {
-                detector.Rotate(Vector3.up * detectionDifficulty);
+                detector.Rotate(Vector3.up * 5);
                 if (detector.rotation.eulerAngles.y > sightAngle && detector.rotation.eulerAngles.y < 180)
                     toPositive = false;
             }
             else
             {
-                detector.Rotate(Vector3.down * detectionDifficulty);
+                detector.Rotate(Vector3.down * 5);
                 if (detector.rotation.eulerAngles.y < 360 - sightAngle && detector.rotation.eulerAngles.y > 180)
                     toPositive = true;
             }
@@ -58,7 +57,7 @@ public class Watcher : Enemy
                 currentDetected = hitTransform.gameObject.GetComponent<Detectable>();
                 if (currentDetected != null)
                 {
-                    currentDetected.DetectionHit(this);
+                    currentDetected.ShootDetectionHit(this);
                 }
             }
 
