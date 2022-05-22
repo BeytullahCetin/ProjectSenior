@@ -285,7 +285,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 2, z: 10}
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6496389569882093017
 MonoBehaviour:
@@ -299,6 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4cfeec849a70a49810db52b000167d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemiesToLure: []
 --- !u!114 &7575446983136078746
 MonoBehaviour:
   m_ObjectHideFlags: 0
