@@ -151,6 +151,7 @@ Transform:
   - {fileID: 4000014408157799}
   - {fileID: 4000012737751777}
   - {fileID: 4000012937332806}
+  - {fileID: 4189848947228153178}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -195,7 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fa353b39a0fb174284b3963b2167e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objective: {fileID: 3009256038646443495}
+  objectives:
+  - {fileID: 3009256038646443495}
   levelCompletedController: {fileID: 0}
   levelWinText: {fileID: 0}
   levelWinEarningsText: {fileID: 0}
@@ -927,6 +929,68 @@ Transform:
 Light:
   m_CorrespondingSourceObject: {fileID: 108000010213783520, guid: 2b1146ffc6ea01e4bb2c86bdc19a332f, type: 3}
   m_PrefabInstance: {fileID: 172308978}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &262792003
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1803797539935710449}
+    m_Modifications:
+    - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7925092
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3979416
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24.196312
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189848947423835678, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+      propertyPath: m_Name
+      value: DoorLightning
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+--- !u!4 &4189848947228153178 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+  m_PrefabInstance: {fileID: 262792003}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &640369565
 PrefabInstance:
@@ -1953,6 +2017,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1803797539935710449}
     m_Modifications:
+    - target: {fileID: 707820425, guid: 6b451a4adf0b9c14eb51385f788e243a, type: 3}
+      propertyPath: detectionDifficulty
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 780230151, guid: 6b451a4adf0b9c14eb51385f788e243a, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6950935817335646872, guid: 6b451a4adf0b9c14eb51385f788e243a, type: 3}
       propertyPath: m_RootOrder
       value: 3
