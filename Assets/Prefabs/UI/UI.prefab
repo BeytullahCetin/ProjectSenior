@@ -400,6 +400,10 @@ MonoBehaviour:
   mainMenuScene: MainMenu
   levelControllers:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2070538581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,7 +1578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5208066514512638134, guid: 179a5a2f52ff7e14fa100d2408861d81, type: 3}
       propertyPath: slideSpeed
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 179a5a2f52ff7e14fa100d2408861d81, type: 3}
