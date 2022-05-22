@@ -19,6 +19,8 @@ public class SlidingText : MonoBehaviour
     {
         screenHeight = Screen.currentResolution.height;
         slideSeconds = new WaitForSeconds(0.01f / slideSpeed);
+        Debug.Log(screenHeight);
+        Debug.Log(text.sizeDelta.y);
     }
 
     public void StartSlideText()
@@ -31,12 +33,12 @@ public class SlidingText : MonoBehaviour
     {
         while (!isEnded)
         {
-            if (!(text.localPosition.y < text.sizeDelta.y + screenHeight))
+            if (!(text.anchoredPosition.y < text.sizeDelta.y + screenHeight))
             {
                 isEnded = true;
             }
 
-            text.localPosition += Vector3.up;
+            text.anchoredPosition += Vector2.up;
             yield return slideSeconds;
         }
         isEnded = false;
