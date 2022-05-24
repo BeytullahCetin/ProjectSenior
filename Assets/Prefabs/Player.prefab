@@ -2986,6 +2986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1418967670725350527}
   throwForce: 500
+  rayDistance: 2
 --- !u!1 &1418967672352375522
 GameObject:
   m_ObjectHideFlags: 0
