@@ -654,7 +654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 108000010213783520, guid: 2b1146ffc6ea01e4bb2c86bdc19a332f, type: 3}
       propertyPath: m_Range
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 108000010213783520, guid: 2b1146ffc6ea01e4bb2c86bdc19a332f, type: 3}
       propertyPath: m_Intensity
@@ -808,7 +808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0125022
+      value: 0.99590206
       objectReference: {fileID: 0}
     - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -816,23 +816,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.950058
+      value: -23.050058
       objectReference: {fileID: 0}
     - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -849,6 +849,14 @@ PrefabInstance:
     - target: {fileID: 4189848947423835678, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
       propertyPath: m_Name
       value: DoorLightning (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189848948250250084, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.657
+      objectReference: {fileID: 0}
+    - target: {fileID: 4189848948298620163, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
