@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorLightning : MonoBehaviour
+public class DoorLighting : MonoBehaviour
 {
     [SerializeField] Renderer[] objects;
     [SerializeField] Material[] materials;

@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 4189848947423835673}
   - component: {fileID: 4189848947423835672}
   m_Layer: 0
-  m_Name: DoorLightning
+  m_Name: DoorLighting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
