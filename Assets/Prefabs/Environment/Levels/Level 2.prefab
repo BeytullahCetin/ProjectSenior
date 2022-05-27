@@ -234,7 +234,9 @@ MonoBehaviour:
   levelCompletedController: {fileID: 0}
   levelWinText: {fileID: 0}
   levelWinEarningsText: {fileID: 0}
-  levelWinEarnings: 
+  levelWinEarnings: '+Sound Lure
+
+    +Light Lure'
   LevelEarnings: 0100000001000000020000000200000002000000020000000200000002000000020000000200000001000000010000000100000001000000010000000100000001000000
 --- !u!65 &925165780
 BoxCollider:
@@ -333,7 +335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.109
+      value: 8.122
       objectReference: {fileID: 0}
     - target: {fileID: 4189848947423835673, guid: aa20f97325d2b2243ab27279926aaae0, type: 3}
       propertyPath: m_LocalPosition.y
