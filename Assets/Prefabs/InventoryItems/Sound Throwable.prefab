@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selfDestructTime: 15
-  radius: 15
+  radius: 5
   throwableType: 2
   audioSource: {fileID: -170289021604614652}
   soundBombClip: {fileID: 8300000, guid: 6e253a93e57607844a3004d701b51af0, type: 3}

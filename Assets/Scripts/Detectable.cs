@@ -11,8 +11,6 @@ public class Detectable : MonoBehaviour
     float currentDetection = 0f;
     float maxDetection = 10f;
     [Range(1, 5)]
-    [SerializeField] float detectionIncreaseRate = 1f;
-    [Range(1, 5)]
     [SerializeField] float detectionDecreseRate = 1f;
     [SerializeField] bool isContinouslyDetectable = false;
 

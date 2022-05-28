@@ -63,8 +63,6 @@ public class PlayerMovement : MonoBehaviour
 
         isMoving = movement.z > 0;
 
-        Debug.Log(movementInput);
-
         stepCoroutine = StartCoroutine(StarStepSound());
 
         OnMovement(movementInput);

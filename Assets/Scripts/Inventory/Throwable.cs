@@ -8,7 +8,7 @@ public class Throwable : InventoryItem
 {
     Collider[] hitColliders;
     Collider tempCollider;
-    [SerializeField] float radius = 10f;
+    [SerializeField] float radius = 5f;
     bool activated = false;
     List<Enemy> enemiesInRadius = new List<Enemy>();
     [SerializeField] ThrowableType throwableType;
@@ -53,8 +53,21 @@ public class Throwable : InventoryItem
 
         foreach (var hitCollider in hitColliders)
         {
+            Enemy e = null;
 
-            Enemy e = throwableType == ThrowableType.Light ? hitCollider.GetComponent<Watcher>() : hitCollider.GetComponent<Listener>();
+            switch (throwableType)
+            {
+                case ThrowableType.Light:
+                    if (hitCollider.GetComponent<Watcher>() != null && hitCollider.GetComponent<Listener>() == null)
+                        e = hitCollider.GetComponent<Watcher>();
+                    break;
+
+                case ThrowableType.Sound:
+                    if (hitCollider.GetComponent<Listener>() != null)
+                        e = hitCollider.GetComponent<Listener>();
+                    break;
+            }
+
             if (e != null)
             {
                 enemiesInRadius.Add(e);
