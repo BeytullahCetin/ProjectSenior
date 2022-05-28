@@ -38,13 +38,13 @@ public class Listener : Enemy
         {
             if (toPositive)
             {
-                detector.Rotate(Vector3.up * 6);
+                detector.Rotate(Vector3.up * detectionDifficulty);
                 if (detector.rotation.eulerAngles.y > sightAngle && detector.rotation.eulerAngles.y < 180)
                     toPositive = false;
             }
             else
             {
-                detector.Rotate(Vector3.down * 6);
+                detector.Rotate(Vector3.down * detectionDifficulty);
                 if (detector.rotation.eulerAngles.y < 360 - sightAngle && detector.rotation.eulerAngles.y > 180)
                     toPositive = true;
             }
