@@ -45,7 +45,6 @@ public class Detectable : MonoBehaviour
                 Debug.Log("Watcher hit");
             else
                 Debug.Log("Listener hit");
-
         }
 
         if (!isDetectionStarted)
@@ -80,7 +79,7 @@ public class Detectable : MonoBehaviour
 
         if (playerMovement.IsMoving && !playerMovement.IsRunning)
             return;
-        
+
         DetectionHit(enemy);
     }
 
@@ -95,6 +94,7 @@ public class Detectable : MonoBehaviour
 
     IEnumerator DetectionCountDown(Enemy detectorEnemy)
     {
+        SoundManager.Instance.PlayClip(detectorEnemy.detectionStartClip);
         while (currentDetection > 0)
         {
             isDetected = currentDetection >= maxDetection;
