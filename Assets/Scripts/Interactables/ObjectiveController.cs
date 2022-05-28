@@ -6,6 +6,7 @@ using UnityEngine;
 public class ObjectiveController : LureController
 {
     public event Action<ObjectiveController> OnObjectiveTaken = delegate { };
+    [SerializeField] AudioClip objectiveAudioClip;
 
     public override void Interaction()
     {
@@ -14,6 +15,7 @@ public class ObjectiveController : LureController
             ActivateLure();
             OnObjectiveTaken(this);
             Debug.Log("Objective Interaction");
+            SoundManager.Instance.PlayClip(objectiveAudioClip);
             Destroy(gameObject);
         }
     }
