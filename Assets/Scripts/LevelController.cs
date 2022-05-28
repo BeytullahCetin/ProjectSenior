@@ -55,7 +55,6 @@ public class LevelController : MonoBehaviour
 
     private void TakeObjective(ObjectiveController objective)
     {
-        Debug.Log(isObjectiveTakenControl);
         if (isObjectiveTakenControl.ContainsKey(objective))
         {
             isObjectiveTakenControl[objective] = true;

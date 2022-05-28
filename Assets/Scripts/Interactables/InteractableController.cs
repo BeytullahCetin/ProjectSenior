@@ -28,8 +28,6 @@ public class InteractableController : MonoBehaviour
 
     public virtual void Interaction()
     {
-        if (canInteractable)
-            Debug.Log("Interaction CollectibleController");
     }
 
     void Update()

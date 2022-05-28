@@ -39,7 +39,6 @@ public class Throwable : InventoryItem
         foreach (Enemy e in enemiesInRadius)
         {
             e.GoToPosition(transform.position);
-            Debug.Log(e.name + ": Activate Feature");
             break;
         }
 
@@ -71,7 +70,6 @@ public class Throwable : InventoryItem
             if (e != null)
             {
                 enemiesInRadius.Add(e);
-                Debug.Log(e.name + ": GetEnemiesInRadius");
             }
 
         }

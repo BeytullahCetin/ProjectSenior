@@ -38,11 +38,6 @@ public class Detectable : MonoBehaviour
         if (currentDetection < maxDetection)
         {
             currentDetection += enemy.DetectionDifficulty;
-
-            if (null == enemy.GetComponent<Listener>())
-                Debug.Log("Watcher hit");
-            else
-                Debug.Log("Listener hit");
         }
 
         if (!isDetectionStarted)
@@ -102,6 +97,5 @@ public class Detectable : MonoBehaviour
 
         isDetected = false;
         isDetectionStarted = false;
-        detectorEnemy.EndDetect(this);
     }
 }

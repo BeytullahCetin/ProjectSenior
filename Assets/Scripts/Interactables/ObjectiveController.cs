@@ -14,7 +14,6 @@ public class ObjectiveController : LureController
         {
             ActivateLure();
             OnObjectiveTaken(this);
-            Debug.Log("Objective Interaction");
             SoundManager.Instance.PlayClip(objectiveAudioClip);
             Destroy(gameObject);
         }

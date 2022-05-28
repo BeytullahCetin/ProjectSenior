@@ -19,8 +19,6 @@ public class SlidingText : MonoBehaviour
     {
         screenHeight = Screen.currentResolution.height;
         slideSeconds = new WaitForSeconds(0.01f / slideSpeed);
-        Debug.Log(screenHeight);
-        Debug.Log(text.sizeDelta.y);
     }
 
     public void StartSlideText()

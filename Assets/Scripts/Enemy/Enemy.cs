@@ -34,7 +34,6 @@ public class Enemy : MonoBehaviour
     public void GoToPosition(Vector3 destination)
     {
         navMeshAgent.SetDestination(destination);
-        Debug.Log(name + ": GoToPosition");
     }
 
     public void Detect(Detectable obj)
@@ -42,12 +41,6 @@ public class Enemy : MonoBehaviour
         //Start follow enemy.
         navMeshAgent.SetDestination(obj.transform.position);
         CheckGameOver();
-    }
-
-    public void EndDetect(Detectable obj)
-    {
-        //End follow enemy.
-        Debug.Log("Seeker.EndDetect");
     }
 
     public void CheckGameOver()

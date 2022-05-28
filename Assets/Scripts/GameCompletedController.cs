@@ -35,9 +35,7 @@ public class GameCompletedController : MonoBehaviour
             if (false == level.IsLevelCompleted)
                 return;
         }
-
-
-        Debug.Log("Game End");
+        
         StartCoroutine(EndGame());
     }
 

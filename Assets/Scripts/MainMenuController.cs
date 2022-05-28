@@ -14,9 +14,6 @@ public class MainMenuController : MonoBehaviour
 
     public void NewGame()
     {
-        //New Game
-        //Show story then load level 1
-        Debug.Log("New Game");
         StartStory();
     }
 
@@ -43,8 +40,6 @@ public class MainMenuController : MonoBehaviour
     public void Quit()
     {
         //Quit
-        Debug.Log("Quit");
-        // save any game data here
 #if UNITY_EDITOR
         // Application.Quit() does not work in the editor so
         // UnityEditor.EditorApplication.isPlaying need to be set to false to end the game

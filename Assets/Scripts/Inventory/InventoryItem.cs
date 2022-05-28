@@ -6,7 +6,7 @@ public abstract class InventoryItem : MonoBehaviour
 {   
     [SerializeField] float selfDestructTime = 15f;
 
-    public virtual void UseInventoryItem(){Debug.Log("InventoryItem");}
+    public virtual void UseInventoryItem(){}
     public virtual void UseInventoryItem(Transform t, float throwForce){}
 
     IEnumerator Start() {

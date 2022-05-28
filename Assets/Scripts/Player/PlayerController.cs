@@ -21,15 +21,10 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-
-            Debug.Log("Raycast");
-
             RaycastHit hit;
             Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * rayDistance, Color.red, 1f);
             if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayDistance))
             {
-                Debug.Log(hit.collider.name);
-
                 current = hit.collider.gameObject.GetComponent<InteractableController>();
                 if (current != null)
                 {
