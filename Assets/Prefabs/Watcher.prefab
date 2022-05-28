@@ -110,7 +110,7 @@ MonoBehaviour:
   detectionStartClip: {fileID: 8300000, guid: ea27414be801b594ea97b7715b1d52f4, type: 3}
   navMeshAgent: {fileID: 5792140069231222694}
   gameOverDistance: 1.5
-  detectionDifficulty: 3
+  detectionDifficulty: 500
   detectDistance: 10
   sightAngle: 190
 --- !u!114 &1830413153
