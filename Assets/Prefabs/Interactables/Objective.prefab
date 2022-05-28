@@ -300,6 +300,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemiesToLure: []
+  objectiveAudioSource: {fileID: 0}
+  objectiveAudioClip: {fileID: 8300000, guid: 9a4fce16b1311984f99ee9316e6c2a93, type: 3}
+  objectsToDisable: []
 --- !u!114 &7575446983136078746
 MonoBehaviour:
   m_ObjectHideFlags: 0

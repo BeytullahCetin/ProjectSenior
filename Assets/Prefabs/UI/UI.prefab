@@ -1080,6 +1080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayAfterReload: 5
+  gameOverClip: {fileID: 8300000, guid: 9629465efb7fd4544a1020848d03aa0e, type: 3}
 --- !u!1 &8620102254100518506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,6 +1466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showDuration: 5
+  levelWinClip: {fileID: 8300000, guid: c2ecba21e8a3d0e4d9a45a0cf6723e58, type: 3}
 --- !u!1 &8620102255314904196
 GameObject:
   m_ObjectHideFlags: 0

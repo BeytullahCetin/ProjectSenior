@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028277efdc9d0ed4fa11139821740705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectionStartClip: {fileID: 0}
   navMeshAgent: {fileID: 780230151}
   gameOverDistance: 1.5
   detectionDifficulty: 6
@@ -138,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51a98c74c223f144a0be03c13e14db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectionStartClip: {fileID: 8300000, guid: ea27414be801b594ea97b7715b1d52f4, type: 3}
   navMeshAgent: {fileID: 780230151}
   gameOverDistance: 2
   detectionDifficulty: 7
@@ -217,7 +219,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
