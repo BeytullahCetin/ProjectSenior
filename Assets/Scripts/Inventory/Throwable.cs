@@ -14,6 +14,9 @@ public class Throwable : InventoryItem
     [SerializeField] ThrowableType throwableType;
     public ThrowableType GetThrowableType { get { return throwableType; } }
 
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip soundBombClip;
+
     private void OnCollisionEnter(Collision other)
     {
         if (activated)
@@ -28,6 +31,9 @@ public class Throwable : InventoryItem
 
     void ActivateFeature()
     {
+        if (soundBombClip != null)
+            audioSource.PlayOneShot(soundBombClip);
+
         GetEnemiesInRadius();
 
         foreach (Enemy e in enemiesInRadius)
