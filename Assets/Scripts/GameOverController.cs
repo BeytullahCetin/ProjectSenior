@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameOverController : MonoBehaviour
 {
     [SerializeField] int delayAfterReload = 5;
+    [SerializeField] AudioClip gameOverClip;
     Canvas gameOverCanvas;
 
     void Reset()
@@ -34,6 +35,8 @@ public class GameOverController : MonoBehaviour
     {
         gameOverCanvas.enabled = true;
         GameObject.FindGameObjectWithTag("Player").SetActive(false);
+        SoundManager.Instance.GetComponent<AudioListener>().enabled = true;
+        SoundManager.Instance.PlayClip(gameOverClip);
         StartCoroutine(ReloadScene());
     }
 
