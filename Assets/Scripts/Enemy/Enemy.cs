@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
 {
     public static Action OnGameOver = delegate { };
 
+    public AudioClip detectionStartClip;
+
     [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] float gameOverDistance = 1f;
 
