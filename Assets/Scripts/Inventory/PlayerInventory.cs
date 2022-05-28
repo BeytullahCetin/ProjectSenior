@@ -9,6 +9,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] Transform itemInstantiatePoint;
     [SerializeField] InventoryItem[] items;
     [SerializeField] Dictionary<InventoryItem, float> itemsAmmos;
+    [SerializeField] Transform inventoryItemContainer;
     InventoryItem selectedItem;
     int selectedItemIndex = 0;
 
@@ -24,6 +25,8 @@ public class PlayerInventory : MonoBehaviour
 
         if (items.Length > 0)
             selectedItem = items[selectedItemIndex];
+
+        CreateSelectedItem();
     }
 
     public void UseItem(InputAction.CallbackContext context)
@@ -34,11 +37,12 @@ public class PlayerInventory : MonoBehaviour
             switch (selectedItem.GetType().ToString())
             {
                 case "Throwable":
-                    if (itemsAmmos[selectedItem] > 0)
+
+                    if (itemsAmmos[items[selectedItemIndex]] > 0)
                     {
                         selectedItem.UseInventoryItem(itemInstantiatePoint, GetComponent<PlayerController>().ThrowForce);
-                        itemsAmmos[selectedItem]--;
-                        Debug.Log(itemsAmmos[selectedItem]);
+                        itemsAmmos[items[selectedItemIndex]]--;
+                        Debug.Log(itemsAmmos[items[selectedItemIndex]]);
                     }
                     break;
 
@@ -66,6 +70,7 @@ public class PlayerInventory : MonoBehaviour
                 selectedItemIndex = selectedItemIndex > 0 ? selectedItemIndex - 1 : items.Length - 1;
             }
             selectedItem = items[selectedItemIndex];
+            CreateSelectedItem();
         }
     }
 
@@ -81,5 +86,21 @@ public class PlayerInventory : MonoBehaviour
                 break;
             }
         }
+    }
+
+    void CreateSelectedItem()
+    {
+        if (inventoryItemContainer.transform.childCount > 0)
+        {
+            foreach (Transform child in inventoryItemContainer.transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        selectedItem = Instantiate(selectedItem);
+        selectedItem.transform.parent = inventoryItemContainer;
+        selectedItem.transform.localPosition = Vector3.zero;
+        selectedItem.transform.localRotation = Quaternion.identity;
     }
 }

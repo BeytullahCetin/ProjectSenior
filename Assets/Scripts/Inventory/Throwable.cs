@@ -92,7 +92,12 @@ public class Throwable : InventoryItem
         Throwable obj = Instantiate(this, t.position, Quaternion.identity);
         Rigidbody objRigidbody = obj.GetComponent<Rigidbody>();
         float randomNumber = Random.Range(0, 1);
+        objRigidbody.useGravity = true;
+        objRigidbody.isKinematic = false;
         objRigidbody.AddTorque(new Vector3(randomNumber, randomNumber, randomNumber));
         objRigidbody.AddForce(t.forward * throwForce);
+        obj.transform.GetChild(0).GetComponentInChildren<SphereCollider>().enabled = true;
+        obj.StartDestruction();
+
     }
 }
