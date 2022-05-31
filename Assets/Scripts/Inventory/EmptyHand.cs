@@ -5,27 +5,28 @@ using UnityEngine;
 public class EmptyHand : InventoryItem
 {
     Animator handAnim;
-    float animationTimeout = 5f;
-    float adfads = 0;
+    [SerializeField] float animationTimeout = 2.5f;
+    float requiredTime;
 
     private void Start()
     {
         handAnim = GetComponent<Animator>();
+        requiredTime = animationTimeout;
     }
 
     private void Update()
     {
-        if (adfads < animationTimeout)
-            adfads += Time.deltaTime;
+        if (requiredTime < animationTimeout)
+            requiredTime += Time.deltaTime;
     }
 
     public override void UseInventoryItem()
     {
         Debug.Log("Empty Hand");
-        if (adfads >= animationTimeout)
+        if (requiredTime >= animationTimeout)
         {
             handAnim.SetTrigger("Action");
-            adfads = 0;
+            requiredTime = 0;
         }
     }
 }
