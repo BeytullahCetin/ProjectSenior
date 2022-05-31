@@ -33,7 +33,6 @@ public class PlayerInventory : MonoBehaviour
     {
         if (context.performed)
         {
-
             switch (selectedItem.GetType().ToString())
             {
                 case "Throwable":
@@ -78,12 +77,16 @@ public class PlayerInventory : MonoBehaviour
     {
         foreach (InventoryItem i in items)
         {
+            //Debug.Log(i.name);
             Throwable throwable = i.GetComponent<Throwable>();
-            if (throwable.GetThrowableType.ToString() == type)
+            if (throwable != null)
             {
-                itemsAmmos[throwable]++;
-                Debug.Log(itemsAmmos[throwable]);
-                break;
+                if (throwable.GetThrowableType.ToString() == type)
+                {
+                    itemsAmmos[throwable]++;
+                    //Debug.Log(throwable.GetThrowableType + " : " + itemsAmmos[throwable]);
+                    break;
+                }
             }
         }
     }
