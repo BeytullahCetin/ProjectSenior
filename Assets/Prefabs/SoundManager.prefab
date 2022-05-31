@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9abccd796c09ca54bb9883baf7382368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTime: 0.5
+  fadeTime: 1.5
   mainAmbienceAudioSource: {fileID: 547344240584688083}
   externalAmbienceAudioSource: {fileID: 940878635}
   oneShotAudioSource: {fileID: 940878634}
