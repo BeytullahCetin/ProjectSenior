@@ -3052,6 +3052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionDecreseRate: 1
   isContinouslyDetectable: 1
+  detectionClip: {fileID: 8300000, guid: ba2b419bd61431943959b923d9280deb, type: 3}
 --- !u!136 &1418967672327620322
 CapsuleCollider:
   m_ObjectHideFlags: 0

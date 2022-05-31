@@ -39,13 +39,13 @@ public class Watcher : Enemy
         {
             if (toPositive)
             {
-                detector.Rotate(Vector3.up * Time.deltaTime * detectionDifficulty);
+                detector.Rotate(Vector3.up * Time.deltaTime * detectionSpeed);
                 if (detector.localRotation.eulerAngles.y > sightAngle && detector.localRotation.eulerAngles.y < 180)
                     toPositive = false;
             }
             else
             {
-                detector.Rotate(Vector3.down * Time.deltaTime * detectionDifficulty);
+                detector.Rotate(Vector3.down * Time.deltaTime * detectionSpeed);
                 if (detector.localRotation.eulerAngles.y < 360 - sightAngle && detector.localRotation.eulerAngles.y > 180)
                     toPositive = true;
             }

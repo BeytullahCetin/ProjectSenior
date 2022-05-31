@@ -91,7 +91,8 @@ MonoBehaviour:
   detectionStartClip: {fileID: 8300000, guid: ea27414be801b594ea97b7715b1d52f4, type: 3}
   navMeshAgent: {fileID: 780230151}
   gameOverDistance: 1.5
-  detectionDifficulty: 500
+  detectionSpeed: 500
+  detectionDifficulty: 4
   detectDistance: 25
   sightAngle: 360
 --- !u!114 &780230149
@@ -142,6 +143,7 @@ MonoBehaviour:
   detectionStartClip: {fileID: 8300000, guid: ea27414be801b594ea97b7715b1d52f4, type: 3}
   navMeshAgent: {fileID: 780230151}
   gameOverDistance: 2
+  detectionSpeed: 500
   detectionDifficulty: 500
   detectDistance: 2.5
   sightAngle: 360

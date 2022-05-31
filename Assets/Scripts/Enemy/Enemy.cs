@@ -14,8 +14,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] float gameOverDistance = 1f;
 
-    [SerializeField] protected float detectionDifficulty = 5f;
+    [SerializeField] protected float detectionSpeed = 500f;
+    
+    [SerializeField] protected float detectionDifficulty = 4f;
     public float DetectionDifficulty { get { return detectionDifficulty; } }
+
 
 
     protected Transform playerTransform;

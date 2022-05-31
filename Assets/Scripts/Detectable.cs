@@ -14,6 +14,8 @@ public class Detectable : MonoBehaviour
     [SerializeField] float detectionDecreseRate = 1f;
     [SerializeField] bool isContinouslyDetectable = false;
 
+    [SerializeField] AudioClip detectionClip;
+
     Enemy currentDetector;
 
     PlayerMovement playerMovement;
@@ -52,6 +54,8 @@ public class Detectable : MonoBehaviour
             {
                 case true:
                     StartCoroutine(DetectContinously(enemy));
+                    Debug.Log("Detection started");
+                    SoundManager.Instance.SwapAmbience(detectionClip);
                     break;
                 case false:
                     enemy.Detect(this);
@@ -97,5 +101,6 @@ public class Detectable : MonoBehaviour
 
         isDetected = false;
         isDetectionStarted = false;
+        SoundManager.Instance.PlayMainAmbience();
     }
 }

@@ -3576,5 +3576,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 547344240584688085, guid: 48348110d2afad84695aaac53e659cd2, type: 3}
+      propertyPath: fadeTime
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48348110d2afad84695aaac53e659cd2, type: 3}
