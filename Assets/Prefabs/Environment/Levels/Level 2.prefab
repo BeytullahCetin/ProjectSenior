@@ -439,6 +439,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.003
       objectReference: {fileID: 0}
+    - target: {fileID: 108000010213783520, guid: 2b1146ffc6ea01e4bb2c86bdc19a332f, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -6.6437786e+22
+      objectReference: {fileID: 0}
+    - target: {fileID: 108000010213783520, guid: 2b1146ffc6ea01e4bb2c86bdc19a332f, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 1.02e-43
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b1146ffc6ea01e4bb2c86bdc19a332f, type: 3}
 --- !u!1 &1000011702280774 stripped
@@ -2222,6 +2230,18 @@ PrefabInstance:
       propertyPath: EnemiesToLure.Array.data[0]
       value: 
       objectReference: {fileID: 4709815991221225497}
+    - target: {fileID: 6525385039452876248, guid: c10dbc49cdac98c48bc489f4ce6c7995, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525385039452876248, guid: c10dbc49cdac98c48bc489f4ce6c7995, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525385039452876248, guid: c10dbc49cdac98c48bc489f4ce6c7995, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 247
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c10dbc49cdac98c48bc489f4ce6c7995, type: 3}
 --- !u!114 &3626480723132627005 stripped

@@ -72,10 +72,10 @@ public class SoundManager : MonoBehaviour
                 externalAmbienceAudioSource.volume = Mathf.Lerp(0, 1, timeElapsed / fadeTime);
                 mainAmbienceAudioSource.volume = Mathf.Lerp(1, 0, timeElapsed / fadeTime);
                 timeElapsed += Time.deltaTime;
-                yield return null;
+                
             }
-
             mainAmbienceAudioSource.Stop();
+            yield return null;
         }
     }
 
