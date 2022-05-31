@@ -5,11 +5,14 @@ using UnityEngine;
 public class LightLureController : LureController
 {
     [SerializeField] Light[] lightsToDisable;
+    [SerializeField] AudioSource lightLureAudioSource;
 
     public override void Interaction()
     {
         if (canInteractable && !isUsed)
         {
+            lightLureAudioSource.Play();
+            
             isUsed = true;
 
             ActivateLure();
