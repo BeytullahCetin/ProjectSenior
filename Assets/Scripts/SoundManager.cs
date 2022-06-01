@@ -20,6 +20,8 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         else
             Instance = this;
+
+        PlayMainAmbience();
     }
 
     public void PlayClip(AudioClip clip)
@@ -72,11 +74,18 @@ public class SoundManager : MonoBehaviour
                 externalAmbienceAudioSource.volume = Mathf.Lerp(0, 1, timeElapsed / fadeTime);
                 mainAmbienceAudioSource.volume = Mathf.Lerp(1, 0, timeElapsed / fadeTime);
                 timeElapsed += Time.deltaTime;
-                
+
             }
             mainAmbienceAudioSource.Stop();
             yield return null;
         }
+    }
+
+    public void StopAllSounds()
+    {
+        mainAmbienceAudioSource.Stop();
+        externalAmbienceAudioSource.Stop();
+        oneShotAudioSource.Stop();
     }
 
 
