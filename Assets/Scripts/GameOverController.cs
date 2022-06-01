@@ -36,6 +36,7 @@ public class GameOverController : MonoBehaviour
         gameOverCanvas.enabled = true;
         GameObject.FindGameObjectWithTag("Player").SetActive(false);
         SoundManager.Instance.GetComponent<AudioListener>().enabled = true;
+        SoundManager.Instance.StopAllSounds();
         SoundManager.Instance.PlayClip(gameOverClip);
         StartCoroutine(ReloadScene());
     }
