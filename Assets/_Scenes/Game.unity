@@ -786,22 +786,6 @@ PrefabInstance:
       propertyPath: levelCompletedController
       value: 
       objectReference: {fileID: 1652375747}
-    - target: {fileID: 1868787655088794274, guid: b151b42a33e05e74bb6c1db146c0758e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0083151
-      objectReference: {fileID: 0}
-    - target: {fileID: 1868787655088794274, guid: b151b42a33e05e74bb6c1db146c0758e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.0167
-      objectReference: {fileID: 0}
-    - target: {fileID: 1868787655088794274, guid: b151b42a33e05e74bb6c1db146c0758e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.035
-      objectReference: {fileID: 0}
-    - target: {fileID: 1868787655088794274, guid: b151b42a33e05e74bb6c1db146c0758e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 6.95
-      objectReference: {fileID: 0}
     - target: {fileID: 6239684629227164814, guid: b151b42a33e05e74bb6c1db146c0758e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2588,10 +2572,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7113282772023439531, guid: 55276af480e7ae14ea0a1437c8c3b4c6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55276af480e7ae14ea0a1437c8c3b4c6, type: 3}
 --- !u!4 &1009103209 stripped
@@ -3090,18 +3070,6 @@ PrefabInstance:
       propertyPath: levelCompletedController
       value: 
       objectReference: {fileID: 1652375747}
-    - target: {fileID: 3268606361459146881, guid: bd77344f615069c4ab72cdee6375270f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0990853
-      objectReference: {fileID: 0}
-    - target: {fileID: 3268606361459146881, guid: bd77344f615069c4ab72cdee6375270f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.035
-      objectReference: {fileID: 0}
-    - target: {fileID: 3268606361459146881, guid: bd77344f615069c4ab72cdee6375270f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 7.9009
-      objectReference: {fileID: 0}
     - target: {fileID: 4149151754734314579, guid: bd77344f615069c4ab72cdee6375270f, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -5280,10 +5248,6 @@ PrefabInstance:
     - target: {fileID: 547344240584688084, guid: 48348110d2afad84695aaac53e659cd2, type: 3}
       propertyPath: m_Name
       value: SoundManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 4953755239319085825, guid: 48348110d2afad84695aaac53e659cd2, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48348110d2afad84695aaac53e659cd2, type: 3}
