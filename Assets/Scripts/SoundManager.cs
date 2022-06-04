@@ -7,7 +7,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
 
     [SerializeField] float fadeTime = .5f;
-    bool isPlayingMainAmbience = true;
+    bool isPlayingMainAmbience = false;
 
     [SerializeField] AudioSource mainAmbienceAudioSource;
     [SerializeField] AudioSource externalAmbienceAudioSource;
@@ -31,6 +31,9 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMainAmbience()
     {
+        if (true == isPlayingMainAmbience)
+            return;
+
         StopAllCoroutines();
         StartCoroutine(PlayMainAmbienceRoutine());
         isPlayingMainAmbience = true;
