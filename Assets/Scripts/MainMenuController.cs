@@ -12,22 +12,15 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] SlidingText storyScreen;
     [SerializeField] Button pressAnyKey;
 
-    private void Start()
+    void Update()
     {
-        
+        if (Keyboard.current.anyKey.wasPressedThisFrame)
+            pressAnyKey.onClick.Invoke();
     }
 
     public void NewGame()
     {
         StartStory();
-    }
-
-    void SkipStartingScene()
-    {
-        if (Keyboard.current.anyKey.wasPressedThisFrame)
-        {
-            pressAnyKey.onClick.Invoke();
-        }
     }
 
     void LoadGameAfterStory()
