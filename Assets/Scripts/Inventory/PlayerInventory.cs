@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ using static Throwable;
 
 public class PlayerInventory : MonoBehaviour
 {
+    public event Action<string, string> uptadeUIOnInventoryItemChange = delegate { };
+
     [SerializeField] Transform itemInstantiatePoint;
     [SerializeField] InventoryItem[] items;
     [SerializeField] Dictionary<InventoryItem, float> itemsAmmos;
@@ -49,6 +52,8 @@ public class PlayerInventory : MonoBehaviour
                     selectedItem.UseInventoryItem();
                     break;
             }
+
+            UpdateInventoryUI();
         }
     }
 
@@ -69,8 +74,20 @@ public class PlayerInventory : MonoBehaviour
                 selectedItemIndex = selectedItemIndex > 0 ? selectedItemIndex - 1 : items.Length - 1;
             }
             selectedItem = items[selectedItemIndex];
+
+            UpdateInventoryUI();
+
             CreateSelectedItem();
         }
+    }
+
+    void UpdateInventoryUI()
+    {
+        if (selectedItem.GetType().ToString() == "EmptyHand")
+            uptadeUIOnInventoryItemChange("Hands", "-");
+        else
+            uptadeUIOnInventoryItemChange(selectedItem.GetComponent<Throwable>().GetThrowableType.ToString(), itemsAmmos[items[selectedItemIndex]].ToString());
+
     }
 
     public void AddAmmo(string type)
@@ -89,6 +106,8 @@ public class PlayerInventory : MonoBehaviour
                 }
             }
         }
+
+        UpdateInventoryUI();
     }
 
     void CreateSelectedItem()
