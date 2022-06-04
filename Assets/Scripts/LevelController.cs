@@ -73,6 +73,8 @@ public class LevelController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            SoundManager.Instance.PlayMainAmbience();
+
             foreach (bool control in isObjectiveTakenControl.Values)
             {
                 if (control == false)
@@ -88,7 +90,7 @@ public class LevelController : MonoBehaviour
             AddLevelEarnings(LevelEarnings);
             doorLighting.ChangeMaterial(1);
             isLevelCompleted = true;
-            
+
             GameCompletedController.Instance.CheckGameCompleted();
         }
     }
