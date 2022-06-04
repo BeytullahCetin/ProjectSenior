@@ -2668,7 +2668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3557844159664730908, guid: 9233eb7911345f54d8ae2291affe065e, type: 3}
       propertyPath: lightsToDisable.Array.size
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3557844159664730908, guid: 9233eb7911345f54d8ae2291affe065e, type: 3}
       propertyPath: EnemiesToLure.Array.data[0]
