@@ -236,4 +236,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2857714290186255323}
-  slideSpeed: 10
+  slideSpeed: 1
