@@ -7,32 +7,36 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] NavMeshAgent navMeshAgent;
-    [SerializeField] float gameOverDistance = 2f;
-
     public static Action OnGameOver = delegate { };
 
-    [SerializeField] Transform playerTransform;
+    public AudioClip detectionStartClip;
+
+    [SerializeField] NavMeshAgent navMeshAgent;
+    [SerializeField] float gameOverDistance = 1f;
+
+    [SerializeField] protected float detectionSpeed = 500f;
+    
+    [SerializeField] protected float detectionDifficulty = 4f;
+    public float DetectionDifficulty { get { return detectionDifficulty; } }
+
+
+
+    protected Transform playerTransform;
     float distanceBetweenPlayer;
 
+    private void Awake()
+    {
+        Reset();
+    }
 
     private void Reset()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
-    private void Start()
-    {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        //navMeshAgent.updatePosition = false;
     }
 
     public void GoToPosition(Vector3 destination)
     {
         navMeshAgent.SetDestination(destination);
-        Debug.Log(name + ": GoToPosition");
     }
 
     public void Detect(Detectable obj)
@@ -40,12 +44,6 @@ public class Enemy : MonoBehaviour
         //Start follow enemy.
         navMeshAgent.SetDestination(obj.transform.position);
         CheckGameOver();
-    }
-
-    public void EndDetect(Detectable obj)
-    {
-        //End follow enemy.
-        Debug.Log("Seeker.EndDetect");
     }
 
     public void CheckGameOver()

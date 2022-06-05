@@ -2,9 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverController : MonoBehaviour
 {
+    [SerializeField] int delayAfterReload = 5;
+    [SerializeField] AudioClip gameOverClip;
     Canvas gameOverCanvas;
 
     void Reset()
@@ -14,7 +17,7 @@ public class GameOverController : MonoBehaviour
 
     void Start()
     {
-        gameOverCanvas = GetComponent<Canvas>();
+        Reset();
         gameOverCanvas.enabled = false;
     }
 
@@ -32,5 +35,15 @@ public class GameOverController : MonoBehaviour
     {
         gameOverCanvas.enabled = true;
         GameObject.FindGameObjectWithTag("Player").SetActive(false);
+        SoundManager.Instance.GetComponent<AudioListener>().enabled = true;
+        SoundManager.Instance.StopAllSounds();
+        SoundManager.Instance.PlayClip(gameOverClip);
+        StartCoroutine(ReloadScene());
+    }
+
+    IEnumerator ReloadScene()
+    {
+        yield return new WaitForSeconds(delayAfterReload);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

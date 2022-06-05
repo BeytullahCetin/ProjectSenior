@@ -29,16 +29,21 @@ public class SlidingText : MonoBehaviour
 
     IEnumerator SlideText()
     {
-        while (!isEnded)
+        //Text is slided until the whole text area is unvisible
+        while (false == isEnded)
         {
-            if (!(text.localPosition.y < text.sizeDelta.y + screenHeight))
+            if (!(text.anchoredPosition.y < text.sizeDelta.y + screenHeight))
             {
                 isEnded = true;
             }
 
-            text.localPosition += Vector3.up;
+            //Every slideSeconds text area is move up by 1 pixel
+            text.anchoredPosition += Vector2.up;
             yield return slideSeconds;
         }
+
+        //After all text slide operation is completed
+        //Text area position has reset
         isEnded = false;
         text.anchoredPosition = Vector2.zero;
         gameObject.SetActive(false);

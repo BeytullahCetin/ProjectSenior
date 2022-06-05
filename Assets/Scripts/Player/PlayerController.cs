@@ -6,8 +6,10 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] Camera playerCamera;
-
     [SerializeField] float throwForce = 1f;
+
+    [SerializeField] float rayDistance  = 1f;
+    InteractableController current;
     public float ThrowForce { get { return throwForce; } }
 
     private void Start()
@@ -19,18 +21,26 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-
-            Debug.Log("Raycast");
-
             RaycastHit hit;
-            Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * 10, Color.red, 1f);
-            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, 10))
+            Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * rayDistance, Color.red, 1f);
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayDistance))
             {
-                InteractableController current = hit.collider.gameObject.GetComponent<InteractableController>();
+                // Control raycast hit a InteractableController in gameObject
+                current = hit.collider.gameObject.GetComponent<InteractableController>();
                 if (current != null)
                 {
                     current.Interaction();
                 }
+                
+                // Control raycast hit a InteractableController in Parent gameObject
+                current = hit.collider.gameObject.GetComponentInParent<InteractableController>();
+                if (current != null)
+                {
+                    current.Interaction();
+                }
+
+                // These Controls needed because InteractableObjects has a child object Model
+                //and that child object contains 3D model and collider
             }
 
         }

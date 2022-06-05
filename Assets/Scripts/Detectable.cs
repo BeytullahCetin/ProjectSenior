@@ -8,13 +8,26 @@ public class Detectable : MonoBehaviour
 {
     //public enum DetectionType { Discrete, Continuous };
 
-    [SerializeField] float currentDetection = 0f;
-    [SerializeField] float maxDetection = 10f;
-    [SerializeField] float detectionIncreaseRate = 1f;
+    float currentDetection = 0f;
+    float maxDetection = 10f;
+    [Range(1, 5)]
     [SerializeField] float detectionDecreseRate = 1f;
     [SerializeField] bool isContinouslyDetectable = false;
+
+    [SerializeField] AudioClip detectionClip;
+
+    Enemy currentDetector;
+
+    PlayerMovement playerMovement;
+
     bool isDetected = false;
     bool isDetectionStarted = false;
+
+
+    private void Start()
+    {
+        playerMovement = GetComponent<PlayerMovement>();
+    }
 
     private void Update()
     {
@@ -22,29 +35,49 @@ public class Detectable : MonoBehaviour
             currentDetection = 0;
     }
 
-    public void DetectionHit(Enemy enemy)
+    void DetectionHit(Enemy enemy)
     {
         if (currentDetection < maxDetection)
-            currentDetection += detectionIncreaseRate;
+        {
+            currentDetection += enemy.DetectionDifficulty;
+        }
 
-        if (!isDetectionStarted)
+        if (false == isDetectionStarted)
         {
             isDetectionStarted = true;
             StartCoroutine(DetectionCountDown(enemy));
         }
 
-        if (isDetected)
+        if (true == isDetected)
         {
             switch (isContinouslyDetectable)
             {
                 case true:
                     StartCoroutine(DetectContinously(enemy));
+                    Debug.Log("Detection started");
+                    SoundManager.Instance.SwapAmbience(detectionClip);
                     break;
                 case false:
                     enemy.Detect(this);
                     break;
             }
         }
+    }
+
+    public void ShootDetectionHit(Watcher enemy)
+    {
+        DetectionHit(enemy);
+    }
+
+    public void ShootDetectionHit(Listener enemy)
+    {
+        if (false == playerMovement.IsMoving)
+            return;
+
+        if (true == playerMovement.IsMoving && false == playerMovement.IsRunning)
+            return;
+
+        DetectionHit(enemy);
     }
 
     IEnumerator DetectContinously(Enemy detectorEnemy)
@@ -58,6 +91,7 @@ public class Detectable : MonoBehaviour
 
     IEnumerator DetectionCountDown(Enemy detectorEnemy)
     {
+        SoundManager.Instance.PlayClip(detectorEnemy.detectionStartClip);
         while (currentDetection > 0)
         {
             isDetected = currentDetection >= maxDetection;
@@ -67,6 +101,6 @@ public class Detectable : MonoBehaviour
 
         isDetected = false;
         isDetectionStarted = false;
-        detectorEnemy.EndDetect(this);
+        SoundManager.Instance.PlayMainAmbience();
     }
 }

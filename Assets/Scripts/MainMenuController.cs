@@ -3,17 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField] string newGameScene;
     [SerializeField] SlidingText storyScreen;
+    [SerializeField] Button pressAnyKey;
+
+    void Update()
+    {
+        if (Keyboard.current.anyKey.wasPressedThisFrame)
+            pressAnyKey.onClick.Invoke();
+    }
 
     public void NewGame()
     {
-        //New Game
-        //Show story then load level 1
-        Debug.Log("New Game");
         StartStory();
     }
 
@@ -32,8 +38,6 @@ public class MainMenuController : MonoBehaviour
     public void Quit()
     {
         //Quit
-        Debug.Log("Quit");
-        // save any game data here
 #if UNITY_EDITOR
         // Application.Quit() does not work in the editor so
         // UnityEditor.EditorApplication.isPlaying need to be set to false to end the game

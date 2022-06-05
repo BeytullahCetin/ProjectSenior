@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,29 +15,81 @@ public class PlayerMovement : MonoBehaviour
     [Range(1.5f, 5f)]
     [SerializeField] float runSpeedMultiplier = 2f;
 
+    [SerializeField] AudioSource footStepAudioSource;
+    [SerializeField] AudioClip[] footSteps;
+    [Range(1, 10)]
+    [SerializeField] float movementFootStepSpeed = 1f;
+    [Range(1.5f, 5f)]
+    [SerializeField] float runFootStepSpeed = 2f;
+    [Range(.1f, 5f)]
+    [SerializeField] float stepInterval = 2f;
+
+
     Vector2 movementInput;
     Vector3 movement;
+    float currentStepInterval;
+    List<Coroutine> stepCoroutines = new List<Coroutine>();
+    Coroutine stepCoroutine;
 
     [Header("States")]
+    bool isMoving = false;
+    public bool IsMoving { get { return isMoving; } }
     bool isRunning = false;
+    public bool IsRunning { get { return isRunning; } }
     bool isCrouching = false;
 
-
+    void Start()
+    {
+        currentStepInterval = stepInterval;
+    }
 
     void Update()
     {
         transform.Translate(movement * Time.deltaTime * (isRunning && movement.z > 0 ? runSpeedMultiplier : 1));
+        if (currentStepInterval >= 0)
+            currentStepInterval -= isRunning == false ? movementFootStepSpeed : runFootStepSpeed;
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
+        if (stepCoroutine != null)
+            StopCoroutine(stepCoroutine);
+
         movementInput = context.ReadValue<Vector2>();
 
         movement.x = movementInput.x;
         movement.z = movementInput.y;
         movement *= movementSpeed;
 
+        isMoving = movement.z > 0;
+
+        stepCoroutine = StartCoroutine(StarStepSound());
+
         OnMovement(movementInput);
+    }
+
+    IEnumerator StarStepSound()
+    {
+        while (movementInput.magnitude > 0)
+        {
+            // While key has pressed this loop must processed
+            Step();
+            // Before next step is called we must wait
+            //If player is in running state the wait must shorter
+            //If player is not in running state the wait must longer
+            yield return new WaitForSeconds(stepInterval / (isRunning == false ? movementFootStepSpeed : runFootStepSpeed));
+        }
+    }
+
+    void Step()
+    {
+        AudioClip stepClip = GetRandomStep();
+        footStepAudioSource.PlayOneShot(stepClip);
+    }
+
+    private AudioClip GetRandomStep()
+    {
+        return footSteps[Random.Range(0, footSteps.Length)];
     }
 
     public void OnRunInput(InputAction.CallbackContext context)
@@ -50,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
                     break;
 
                 case false:
-                    if(!isCrouching)
+                    if (!isCrouching)
                         isRunning = true;
                     break;
             }
@@ -66,14 +119,14 @@ public class PlayerMovement : MonoBehaviour
                 case true:
                     isCrouching = false;
                     break;
-                
+
                 case false:
                     //Slide mechanic can be handled here.
                     isRunning = false;
                     isCrouching = true;
                     break;
             }
-            
+
             OnCrouch(isCrouching);
         }
     }
