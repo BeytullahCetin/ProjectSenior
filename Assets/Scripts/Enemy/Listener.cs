@@ -29,11 +29,13 @@ public class Listener : Enemy
         detector.localPosition = Vector3.zero + new Vector3(0, 1, 0);
     }
 
+    // Start check any Detectable nearby
     IEnumerator LookForDetectable(Transform detector, float sightAngle)
     {
         bool toPositive = true;
         sightAngle = sightAngle / 2;
 
+        // A raycast roting every frame to detect any Detectable
         while (true)
         {
             if (toPositive)
@@ -53,6 +55,8 @@ public class Listener : Enemy
             Debug.DrawRay(detector.position, detector.forward * detectDistance, Color.blue);
             if (Physics.Raycast(detector.position, detector.forward, out hit, detectDistance))
             {
+                // If any raycast hits any detectable call 
+                //ShootDetectionHit function inside that Detectable
                 hitTransform = hit.transform;
                 currentDetected = hitTransform.gameObject.GetComponent<Detectable>();
                 if (currentDetected != null)

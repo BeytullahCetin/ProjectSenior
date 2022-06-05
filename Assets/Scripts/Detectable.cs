@@ -42,13 +42,13 @@ public class Detectable : MonoBehaviour
             currentDetection += enemy.DetectionDifficulty;
         }
 
-        if (!isDetectionStarted)
+        if (false == isDetectionStarted)
         {
             isDetectionStarted = true;
             StartCoroutine(DetectionCountDown(enemy));
         }
 
-        if (isDetected)
+        if (true == isDetected)
         {
             switch (isContinouslyDetectable)
             {
@@ -71,10 +71,10 @@ public class Detectable : MonoBehaviour
 
     public void ShootDetectionHit(Listener enemy)
     {
-        if (!playerMovement.IsMoving)
+        if (false == playerMovement.IsMoving)
             return;
 
-        if (playerMovement.IsMoving && !playerMovement.IsRunning)
+        if (true == playerMovement.IsMoving && false == playerMovement.IsRunning)
             return;
 
         DetectionHit(enemy);

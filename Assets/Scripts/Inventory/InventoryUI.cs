@@ -22,8 +22,8 @@ public class InventoryUI : MonoBehaviour
 
     private void UpdateInventory(string arg1, string arg2)
     {
+        // UI will updated if any event happens.
         itemName.SetText(arg1);
         itemAmmo.SetText(arg2);
-
     }
 }

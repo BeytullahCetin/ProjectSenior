@@ -16,13 +16,15 @@ public class EmptyHand : InventoryItem
 
     private void Update()
     {
+        // requiredTime will increase every frame until
+        //it equals to timeout number.
         if (requiredTime < animationTimeout)
             requiredTime += Time.deltaTime;
     }
 
     public override void UseInventoryItem()
     {
-        Debug.Log("Empty Hand");
+        // Hand animation will play if required time is greater or equal to animation timeout
         if (requiredTime >= animationTimeout)
         {
             handAnim.SetTrigger("Action");

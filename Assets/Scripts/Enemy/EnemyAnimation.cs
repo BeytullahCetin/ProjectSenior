@@ -23,6 +23,7 @@ public class EnemyAnimation : MonoBehaviour
     private void Update()
     {
         speed = navMeshAgent.velocity.magnitude;
+        // Update enemy animation state with respect to its speed
         anim.SetFloat(ANIMATOR_PARAM_WALK_SPEED, speed);
     }
 }

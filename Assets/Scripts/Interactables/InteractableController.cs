@@ -40,6 +40,8 @@ public class InteractableController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            // If player enters collider area
+            //InteractableObjects can be interactable
             canRotate = true;
             canInteractable = true;
             ShowUI();
@@ -56,6 +58,8 @@ public class InteractableController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            // If player exits collider area
+            //InteractableObjects cannot be interactable
             canRotate = false;
             canInteractable = false;
             HideUI();

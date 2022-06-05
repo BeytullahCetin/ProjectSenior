@@ -12,6 +12,10 @@ public class ObjectiveController : LureController
     {
         if (canInteractable)
         {
+            // If an objective taken enemies will be alerted,
+            //OnObjectiveTaken event triggered,
+            //a sound clip played and
+            //Objective will be destroyed.
             ActivateLure();
             OnObjectiveTaken(this);
             SoundManager.Instance.PlayClip(objectiveAudioClip);

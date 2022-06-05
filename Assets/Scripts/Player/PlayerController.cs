@@ -25,17 +25,22 @@ public class PlayerController : MonoBehaviour
             Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * rayDistance, Color.red, 1f);
             if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, rayDistance))
             {
+                // Control raycast hit a InteractableController in gameObject
                 current = hit.collider.gameObject.GetComponent<InteractableController>();
                 if (current != null)
                 {
                     current.Interaction();
                 }
-
+                
+                // Control raycast hit a InteractableController in Parent gameObject
                 current = hit.collider.gameObject.GetComponentInParent<InteractableController>();
                 if (current != null)
                 {
                     current.Interaction();
                 }
+
+                // These Controls needed because InteractableObjects has a child object Model
+                //and that child object contains 3D model and collider
             }
 
         }

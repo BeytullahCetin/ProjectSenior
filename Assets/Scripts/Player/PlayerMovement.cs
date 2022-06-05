@@ -72,9 +72,24 @@ public class PlayerMovement : MonoBehaviour
     {
         while (movementInput.magnitude > 0)
         {
+            // While key has pressed this loop must processed
             Step();
+            // Before next step is called we must wait
+            //If player is in running state the wait must shorter
+            //If player is not in running state the wait must longer
             yield return new WaitForSeconds(stepInterval / (isRunning == false ? movementFootStepSpeed : runFootStepSpeed));
         }
+    }
+
+    void Step()
+    {
+        AudioClip stepClip = GetRandomStep();
+        footStepAudioSource.PlayOneShot(stepClip);
+    }
+
+    private AudioClip GetRandomStep()
+    {
+        return footSteps[Random.Range(0, footSteps.Length)];
     }
 
     public void OnRunInput(InputAction.CallbackContext context)
@@ -114,16 +129,5 @@ public class PlayerMovement : MonoBehaviour
 
             OnCrouch(isCrouching);
         }
-    }
-
-    void Step()
-    {
-        AudioClip stepClip = GetRandomStep();
-        footStepAudioSource.PlayOneShot(stepClip);
-    }
-
-    private AudioClip GetRandomStep()
-    {
-        return footSteps[Random.Range(0, footSteps.Length)];
     }
 }

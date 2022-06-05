@@ -18,14 +18,18 @@ public class PlayerInventory : MonoBehaviour
 
     void Start()
     {
+        // itemAmmos declared
         itemsAmmos = new Dictionary<InventoryItem, float>();
 
+        // itemAmmos filled with items and 0's
+        //It will hold information for which item has how many ammos
         for (int i = 0; i < items.Length; i++)
         {
             InventoryItem item = items[i];
             itemsAmmos.Add(item, 0);
         }
 
+        // selectedItem is assigned to first element of items
         if (items.Length > 0)
             selectedItem = items[selectedItemIndex];
 
@@ -36,15 +40,17 @@ public class PlayerInventory : MonoBehaviour
     {
         if (context.performed)
         {
+            
             switch (selectedItem.GetType().ToString())
             {
+                // Selected item's UseInventoryItem function will called.
                 case "Throwable":
-
+                    // If inventory item is a throwable ammo check is required
                     if (itemsAmmos[items[selectedItemIndex]] > 0)
                     {
+                        // If there are eneough ammo UseInevtoryItem function called and 1 ammo decreased
                         selectedItem.UseInventoryItem(itemInstantiatePoint, GetComponent<PlayerController>().ThrowForce);
                         itemsAmmos[items[selectedItemIndex]]--;
-                        Debug.Log(itemsAmmos[items[selectedItemIndex]]);
                     }
                     break;
 
@@ -52,7 +58,7 @@ public class PlayerInventory : MonoBehaviour
                     selectedItem.UseInventoryItem();
                     break;
             }
-
+            // After item used UI should be updated for any ammo change event
             UpdateInventoryUI();
         }
     }
@@ -75,6 +81,7 @@ public class PlayerInventory : MonoBehaviour
             }
             selectedItem = items[selectedItemIndex];
 
+            // After item changed UI should be updated for item name and ammo change
             UpdateInventoryUI();
 
             CreateSelectedItem();
@@ -83,6 +90,7 @@ public class PlayerInventory : MonoBehaviour
 
     void UpdateInventoryUI()
     {
+        // An event that InventyUI listening trigerred for selected item
         if (selectedItem.GetType().ToString() == "EmptyHand")
             uptadeUIOnInventoryItemChange("Hands", "-");
         else
@@ -92,34 +100,38 @@ public class PlayerInventory : MonoBehaviour
 
     public void AddAmmo(string type)
     {
+        // For any given item type add 1 ammo
         foreach (InventoryItem i in items)
         {
-            //Debug.Log(i.name);
             Throwable throwable = i.GetComponent<Throwable>();
             if (throwable != null)
             {
                 if (throwable.GetThrowableType.ToString() == type)
                 {
                     itemsAmmos[throwable]++;
-                    //Debug.Log(throwable.GetThrowableType + " : " + itemsAmmos[throwable]);
                     break;
                 }
             }
         }
-
+        // After ammo changes, inventory must updated
         UpdateInventoryUI();
     }
 
     void CreateSelectedItem()
     {
+        // After selected item changed
+        // selected item must created on the screen
+
         if (inventoryItemContainer.transform.childCount > 0)
         {
+            // First any other objects must destroyed for any conflicts can happen
             foreach (Transform child in inventoryItemContainer.transform)
             {
                 Destroy(child.gameObject);
             }
         }
 
+        // Then instantiated, assigned to parent, repositioned and rotated
         selectedItem = Instantiate(selectedItem);
         selectedItem.transform.parent = inventoryItemContainer;
         selectedItem.transform.localPosition = Vector3.zero;

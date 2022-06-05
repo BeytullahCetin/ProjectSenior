@@ -19,7 +19,8 @@ public class Throwable : InventoryItem
 
     private void OnCollisionEnter(Collision other)
     {
-        if (activated)
+        // Throwable must triggered only once
+        if (false == activated)
             return;
 
         if (other.gameObject.CompareTag("Ground"))
@@ -31,9 +32,12 @@ public class Throwable : InventoryItem
 
     void ActivateFeature()
     {
+        // If throwable activated and if throwable is a sound lure
+        //an audio clip must play
         if (soundBombClip != null)
             audioSource.PlayOneShot(soundBombClip);
-
+        
+        //Then enemies should be move to throwable's position
         GetEnemiesInRadius();
 
         foreach (Enemy e in enemiesInRadius)
@@ -77,6 +81,8 @@ public class Throwable : InventoryItem
 
     void ShuffleColliderArray(Collider[] colliders)
     {
+        // Physics.OverlapSphere returns colliders in same order
+        //Before make any operations with enemies we must shuffle the array
         for (int i = 0; i < colliders.Length; i++)
         {
             int rnd = Random.Range(0, colliders.Length);
@@ -98,6 +104,5 @@ public class Throwable : InventoryItem
         objRigidbody.AddForce(t.forward * throwForce);
         obj.transform.GetChild(0).GetComponentInChildren<SphereCollider>().enabled = true;
         obj.StartDestruction();
-
     }
 }

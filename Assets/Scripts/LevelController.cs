@@ -71,19 +71,25 @@ public class LevelController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // When Player exits from a level
         if (other.gameObject.CompareTag("Player"))
         {
+            //Main ambience starts to play
             SoundManager.Instance.PlayMainAmbience();
 
+            //Check if all objectives taken
             foreach (bool control in isObjectiveTakenControl.Values)
             {
                 if (control == false)
                     return;
             }
 
+            //If all objectives taken then
+            //Check if level completed previously
             if (isLevelCompleted)
                 return;
-
+            
+            //If not then level compeltion process starts
             levelWinText.SetText(gameObject.name + " Completed");
             levelWinEarningsText.SetText(levelWinEarnings);
             StartCoroutine(levelCompletedController.ShowUI());
@@ -91,6 +97,7 @@ public class LevelController : MonoBehaviour
             doorLighting.ChangeMaterial(1);
             isLevelCompleted = true;
 
+            //And check if all levels are completed to end the game
             GameCompletedController.Instance.CheckGameCompleted();
         }
     }

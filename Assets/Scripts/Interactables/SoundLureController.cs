@@ -20,6 +20,9 @@ public class SoundLureController : LureController
 
     IEnumerator StartAlarm()
     {
+        // Alarm sound will be played for given duration, and
+        //alarm light will be started to rotate
+
         isUsed = true;
         audioLight.enabled = true;
         audioSource.Play();
